@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fie.cercamento.cercamentoLF.dao.EsqLotofacilDao;
 import com.fie.cercamento.cercamentoLF.dao.FieEsqDao33333;
+import com.fie.cercamento.cercamentoLF.resource.FieEsq33333;
+import com.fie.cercamento.cercamentoLF.soldados.EsqCinco;
+import com.fie.cercamento.cercamentoLF.soldados.EsqDois;
+import com.fie.cercamento.cercamentoLF.soldados.EsqQuatro;
+import com.fie.cercamento.cercamentoLF.soldados.EsqTres;
 import com.fie.cercamento.cercamentoLF.soldados.EsqUm;
 
 @Controller

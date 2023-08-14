@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.fie.cercamento.cercamentoLF.soldados.EsqCinco;
+import com.fie.cercamento.cercamentoLF.soldados.EsqDois;
 import com.fie.cercamento.cercamentoLF.soldados.EsqQuatro;
+import com.fie.cercamento.cercamentoLF.soldados.EsqTres;
 import com.fie.cercamento.cercamentoLF.soldados.EsqUm;
 
 import jakarta.persistence.EntityManager;
