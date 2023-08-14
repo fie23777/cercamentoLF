@@ -13,7 +13,6 @@ public class CercaEsqDois {
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2){
 		int sessenta = 25;
-		int valor=0;
 
 			int um1 = sessenta - 3;
 			int dois2 = sessenta - 2;

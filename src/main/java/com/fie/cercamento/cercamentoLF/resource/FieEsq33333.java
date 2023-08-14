@@ -1,11 +1,11 @@
 package com.fie.cercamento.cercamentoLF.resource;
 
-import java.beans.Transient;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+
 @Entity
 public class FieEsq33333 {
     	
@@ -13,8 +13,7 @@ public class FieEsq33333 {
     private int id;
 	
 	private String numEsq33333;
-	
-	//@Transient
+    @Transient
 	private String esqParam;
 
 	public int getId() {

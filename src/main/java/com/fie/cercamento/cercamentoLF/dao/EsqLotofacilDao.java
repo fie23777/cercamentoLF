@@ -2,8 +2,14 @@ package com.fie.cercamento.cercamentoLF.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqCinco;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqDois;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqQuatro;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqTres;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqUm;
 import com.fie.cercamento.cercamentoLF.soldados.EsqCinco;
 import com.fie.cercamento.cercamentoLF.soldados.EsqDois;
 import com.fie.cercamento.cercamentoLF.soldados.EsqQuatro;
@@ -20,23 +26,33 @@ import jakarta.transaction.Transactional;
 public class EsqLotofacilDao {
     @PersistenceContext
 	private EntityManager manager;
+	@Autowired
+	private IEsqUm iEsqUmRepository;
+	@Autowired
+	private IEsqDois iEsqDoisRepository;
+	@Autowired
+	private IEsqTres iEsqTresRepository;
+	@Autowired
+	private IEsqQuatro iEsqQuatroRepository;
+	@Autowired
+	private IEsqCinco iEsqCincoRepository;
 	
 	
 	//*****************************************************Inserir no banco*********************************
 	public void gravarEsqUm(EsqUm numerosEsqUm){
-		manager.persist(numerosEsqUm);
+		iEsqUmRepository.save(numerosEsqUm);
 	}
 	public void gravarEsqDois(EsqDois numerosEsqDois){
-		manager.persist(numerosEsqDois);
+		iEsqDoisRepository.save(numerosEsqDois);
 	}
 	public void gravarEsqTres(EsqTres numerosEsqTres){
-		manager.persist(numerosEsqTres);
+		iEsqTresRepository.save(numerosEsqTres);
 	}
 	public void gravarEsqQuatro(EsqQuatro numerosEsqQuatro){
-		manager.persist(numerosEsqQuatro);
+		iEsqQuatroRepository.save(numerosEsqQuatro);
 	}
 	public void gravarEsqCinco(EsqCinco numerosEsqCinco){
-		manager.persist(numerosEsqCinco);
+		iEsqCincoRepository.save(numerosEsqCinco);
 	}
 	//***************************************************************************Lista de 5****************************
 	public String listarEsqUm5(){

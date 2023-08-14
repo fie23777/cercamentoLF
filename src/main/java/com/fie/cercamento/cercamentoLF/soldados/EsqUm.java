@@ -1,21 +1,21 @@
 package com.fie.cercamento.cercamentoLF.soldados;
-import java.beans.Transient;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.Transient;
 
 @Entity
 public class EsqUm {
 
-	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+
 	private String numEsqUm;
-	//@Transient
+	@Transient
 	private String esqParam;
+
 	public int getId() {
 		return id;
 	}

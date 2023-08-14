@@ -11,9 +11,12 @@ public class EsqQuatro {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+
 	private String numEsqQuatro;
+
 	@Transient
 	private String esqParam;
+	
 	public int getId() {
 		return id;
 	}

@@ -12,8 +12,10 @@ public class EsqCinco {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 	private String numEsqCinco;
+
 	@Transient
 	private String esqParam;
+	
 	public int getId() {
 		return id;
 	}
