@@ -1,36 +1,29 @@
-package com.fie.cercamento.cercamentoLF.controller;
+package com.fie.cercamento.cercamentoLF.resource.resourceEsq.esq33333;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Service;
 
-import com.fie.cercamento.cercamentoLF.dao.EsqLotofacilDao;
-import com.fie.cercamento.cercamentoLF.dao.FieEsqDao33333;
-import com.fie.cercamento.cercamentoLF.resource.FieEsq33333;
-import com.fie.cercamento.cercamentoLF.soldados.EsqCinco;
-import com.fie.cercamento.cercamentoLF.soldados.EsqDois;
-import com.fie.cercamento.cercamentoLF.soldados.EsqQuatro;
-import com.fie.cercamento.cercamentoLF.soldados.EsqTres;
-import com.fie.cercamento.cercamentoLF.soldados.EsqUm;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.EsqLotofacilDao;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadocinco.EsqCinco;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.EsqDois;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro.EsqQuatro;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres.EsqTres;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum.EsqUm;
 
-@Controller
-public class FieEsq33333Controller {
-   
+@Service
+class FieEsq33333Service {
+
 	@Autowired
 	private EsqLotofacilDao numeroList;
 	@Autowired
 	private FieEsqDao33333 gravar;
 
-	@RequestMapping("esquemas/esq33333/esq33333")
-	public String esq33333() {
 
-		return "esquemas/esq33333/esq33333";
-	}
-
-	@RequestMapping("esquemas/esq33333")
-	public String cercaFieEsq3333() {
+	public String getEsq33333() {
+		List<FieEsq33333Model> listLinhas = new ArrayList<FieEsq33333Model>();
 
 		List<EsqUm> numEsq3 = numeroList.listarEsqUm3();
 		// ***********************************************************
@@ -57,15 +50,16 @@ public class FieEsq33333Controller {
 
 							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco;
 
-							FieEsq33333 linhas = new FieEsq33333();
+							FieEsq33333Model linhas = new FieEsq33333Model();
 							linhas.setNumEsq33333(linha);
-							gravar.gravarEsq33333(linhas);
+							listLinhas.add(linhas);
+							
 						}
 					}
 				}
 			}
 		}
+		gravar.gravarEsq33333(listLinhas);
 		return "esquemas/esq33333/esq33333";
 	}
- 
 }

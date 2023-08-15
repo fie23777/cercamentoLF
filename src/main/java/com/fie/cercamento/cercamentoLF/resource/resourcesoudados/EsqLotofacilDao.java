@@ -1,20 +1,20 @@
-package com.fie.cercamento.cercamentoLF.dao;
+package com.fie.cercamento.cercamentoLF.resource.resourcesoudados;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqCinco;
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqDois;
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqQuatro;
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqTres;
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.IEsqUm;
-import com.fie.cercamento.cercamentoLF.soldados.EsqCinco;
-import com.fie.cercamento.cercamentoLF.soldados.EsqDois;
-import com.fie.cercamento.cercamentoLF.soldados.EsqQuatro;
-import com.fie.cercamento.cercamentoLF.soldados.EsqTres;
-import com.fie.cercamento.cercamentoLF.soldados.EsqUm;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadocinco.EsqCinco;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadocinco.IEsqCinco;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.EsqDois;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.IEsqDois;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro.EsqQuatro;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro.IEsqQuatro;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres.EsqTres;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres.IEsqTres;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum.EsqUm;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum.IEsqUm;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

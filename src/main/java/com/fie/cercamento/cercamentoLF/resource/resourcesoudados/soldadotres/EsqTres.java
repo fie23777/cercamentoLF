@@ -1,4 +1,4 @@
-package com.fie.cercamento.cercamentoLF.soldados;
+package com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,26 +7,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
 
 @Entity
-public class EsqUm {
-
+public class EsqTres {
+	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-	private String numEsqUm;
+	private String numEsqTres;
+
 	@Transient
 	private String esqParam;
-
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNumEsqUm() {
-		return numEsqUm;
+	public String getNumEsqTres() {
+		return numEsqTres;
 	}
-	public void setNumEsqUm(String numEsqUm) {
-		this.numEsqUm = numEsqUm;
+	public void setNumEsqTres(String numEsqTres) {
+		this.numEsqTres = numEsqTres;
 	}
 	public String getEsqParam() {
 		return esqParam;
@@ -36,7 +37,7 @@ public class EsqUm {
 	}
 	@Override
 	public String toString() {
-		return ""+numEsqUm+"-";
+		return ""+numEsqTres+"-";
 	}
 	
 }

@@ -1,14 +1,15 @@
-package com.fie.cercamento.cercamentoLF.controller.cercaSoldadosController;
+package com.fie.cercamento.cercamentoLF.resource.resourcesoudados;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fie.cercamento.cercamentoLF.soldados.CercaEsqCinco;
-import com.fie.cercamento.cercamentoLF.soldados.CercaEsqDois;
-import com.fie.cercamento.cercamentoLF.soldados.CercaEsqQuatro;
-import com.fie.cercamento.cercamentoLF.soldados.CercaEsqTres;
-import com.fie.cercamento.cercamentoLF.soldados.CercaEsqUm;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadocinco.CercaEsqCinco;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.CercaEsqDois;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro.CercaEsqQuatro;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres.CercaEsqTres;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum.CercaEsqUm;
 
 @Controller
 public class SoldadosController {
@@ -30,6 +31,7 @@ public class SoldadosController {
 	}
 	
 	@RequestMapping("/fieesqlf/esqcercarSoldados")
+	@ResponseBody
 	public String cercarEsqLotoFacil() {
 		
 		esqcercarUm.cerca2(1, 5);  //estas linhas cercam os pequenos esquemas que compôe os maiores
@@ -52,6 +54,6 @@ public class SoldadosController {
 		esqcercarCinco.cerca3(21, 25);
 		esqcercarCinco.cerca4(21, 25);
 		
-		return "/esqlotofacil/esqlotofacil";
+		return "Cercamento dos soldados realizado com sucesso!";
 	}
 }

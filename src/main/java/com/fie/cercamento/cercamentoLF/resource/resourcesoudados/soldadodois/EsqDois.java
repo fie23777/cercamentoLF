@@ -1,4 +1,4 @@
-package com.fie.cercamento.cercamentoLF.resource;
+package com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,37 +7,39 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
 
 @Entity
-public class FieEsq33333 {
-    	
+public class EsqDois {
+	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 	
-	private String numEsq33333;
-    @Transient
+	private String numEsqDois;
+
+	@Transient
 	private String esqParam;
 
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getNumEsq33333() {
-		return numEsq33333;
+	public String getNumEsqDois() {
+		return numEsqDois;
 	}
-
-	public void setNumEsq33333(String numEsq33333) {
-		this.numEsq33333 = numEsq33333;
+	public void setNumEsqDois(String numEsqDois) {
+		this.numEsqDois = numEsqDois;
 	}
-
 	public String getEsqParam() {
 		return esqParam;
 	}
-
 	public void setEsqParam(String esqParam) {
 		this.esqParam = esqParam;
 	}
+	@Override
+	public String toString() {
+		return "" + numEsqDois + "-";
+	}
 	
+	
+
 }
