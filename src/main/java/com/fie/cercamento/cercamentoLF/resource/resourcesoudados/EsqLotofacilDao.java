@@ -39,20 +39,20 @@ public class EsqLotofacilDao {
 	
 	
 	//*****************************************************Inserir no banco*********************************
-	public void gravarEsqUm(EsqUm numerosEsqUm){
-		iEsqUmRepository.save(numerosEsqUm);
+	public void gravarEsqUm(List<EsqUm> numerosEsqUm){
+		iEsqUmRepository.saveAll(numerosEsqUm);
 	}
-	public void gravarEsqDois(EsqDois numerosEsqDois){
-		iEsqDoisRepository.save(numerosEsqDois);
+	public void gravarEsqDois(List<EsqDois> numerosEsqDois){
+		iEsqDoisRepository.saveAll(numerosEsqDois);
 	}
-	public void gravarEsqTres(EsqTres numerosEsqTres){
-		iEsqTresRepository.save(numerosEsqTres);
+	public void gravarEsqTres(List<EsqTres> numerosEsqTres){
+		iEsqTresRepository.saveAll(numerosEsqTres);
 	}
-	public void gravarEsqQuatro(EsqQuatro numerosEsqQuatro){
-		iEsqQuatroRepository.save(numerosEsqQuatro);
+	public void gravarEsqQuatro(List<EsqQuatro> numerosEsqQuatro){
+		iEsqQuatroRepository.saveAll(numerosEsqQuatro);
 	}
-	public void gravarEsqCinco(EsqCinco numerosEsqCinco){
-		iEsqCincoRepository.save(numerosEsqCinco);
+	public void gravarEsqCinco(List<EsqCinco> numerosEsqCinco){
+		iEsqCincoRepository.saveAll(numerosEsqCinco);
 	}
 	//***************************************************************************Lista de 5****************************
 	public String listarEsqUm5(){

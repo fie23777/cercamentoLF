@@ -1,8 +1,9 @@
 package com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.EsqLotofacilDao;
 
 @Component
@@ -11,6 +12,9 @@ public class CercaEsqUm {
 	private EsqLotofacilDao numerosCercadoDao;
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
+
+        List<EsqUm> listEsqUm = new ArrayList<EsqUm>();
+
 		int sessenta = 25;
 		int um1 = sessenta - 3;
 		int dois2 = sessenta - 2;
@@ -37,16 +41,19 @@ public class CercaEsqUm {
 
 						EsqUm numerosCercados = new EsqUm();
 						numerosCercados.setNumEsqUm(numeros);
-						numerosCercadoDao.gravarEsqUm(numerosCercados);
+						listEsqUm.add(numerosCercados);
 					}
 				}
 			}
 		}
+        numerosCercadoDao.gravarEsqUm(listEsqUm);
 	}
 
 	public void cerca3(int tresInicio, int tresTermino) {
+
+        List<EsqUm> listEsqUm = new ArrayList<EsqUm>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 2;
 		int dois2 = sessenta - 1;
 		int tres3 = tresTermino;
@@ -67,17 +74,19 @@ public class CercaEsqUm {
 
 					EsqUm numerosCercados = new EsqUm();
 					numerosCercados.setNumEsqUm(numeros);
+                    listEsqUm.add(numerosCercados);
 
-					numerosCercadoDao.gravarEsqUm(numerosCercados);
 				}
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqUm(listEsqUm);
 	}
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
+
+        List<EsqUm> listEsqUm = new ArrayList<EsqUm>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 1;
 		int dois2 = numTerminaCom; // terminar neste número
 		int[] resulMega = new int[26];
@@ -94,10 +103,9 @@ public class CercaEsqUm {
 
 				EsqUm numerosCercados = new EsqUm();
 				numerosCercados.setNumEsqUm(numeros);
-
-				numerosCercadoDao.gravarEsqUm(numerosCercados);
+                listEsqUm.add(numerosCercados);
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqUm(listEsqUm);
 	}
 }

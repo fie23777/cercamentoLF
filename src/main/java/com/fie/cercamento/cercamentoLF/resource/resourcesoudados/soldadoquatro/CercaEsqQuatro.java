@@ -1,9 +1,13 @@
 package com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.EsqLotofacilDao;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.EsqDois;
 
 @Component
 public class CercaEsqQuatro {
@@ -11,6 +15,9 @@ public class CercaEsqQuatro {
 	private EsqLotofacilDao numerosCercadoDao;
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
+
+		List<EsqQuatro> listEsqQuatro = new ArrayList<EsqQuatro>();
+
 		int sessenta = 25;
 		int um1 = sessenta - 3;
 		int dois2 = sessenta - 2;
@@ -36,18 +43,19 @@ public class CercaEsqQuatro {
 
 						EsqQuatro numerosCercados = new EsqQuatro();
 						numerosCercados.setNumEsqQuatro(numeros);
-
-						numerosCercadoDao.gravarEsqQuatro(numerosCercados);
-
+                        listEsqQuatro.add(numerosCercados);
 					}
 				}
 			}
 		}
+		numerosCercadoDao.gravarEsqQuatro(listEsqQuatro);
 	}
 
 	public void cerca3(int tresInicio, int tresTermino) {
+
+		List<EsqQuatro> listEsqQuatro = new ArrayList<EsqQuatro>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 2;
 		int dois2 = sessenta - 1;
 		int tres3 = tresTermino;
@@ -68,17 +76,18 @@ public class CercaEsqQuatro {
 
 					EsqQuatro numerosCercados = new EsqQuatro();
 					numerosCercados.setNumEsqQuatro(numeros);
-
-					numerosCercadoDao.gravarEsqQuatro(numerosCercados);
+					listEsqQuatro.add(numerosCercados);	
 				}
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqQuatro(listEsqQuatro);
 	}
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
+
+		List<EsqQuatro> listEsqQuatro = new ArrayList<EsqQuatro>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 1;
 		int dois2 = numTerminaCom; // terminar neste número
 		int[] resulMega = new int[26];
@@ -95,10 +104,9 @@ public class CercaEsqQuatro {
 
 				EsqQuatro numerosCercados = new EsqQuatro();
 				numerosCercados.setNumEsqQuatro(numeros);
-
-				numerosCercadoDao.gravarEsqQuatro(numerosCercados);
+				listEsqQuatro.add(numerosCercados);	
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqQuatro(listEsqQuatro);
 	}
 }

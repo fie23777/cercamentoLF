@@ -1,5 +1,8 @@
 package com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadocinco;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +14,9 @@ public class CercaEsqCinco {
 	private EsqLotofacilDao numerosCercadoDao;
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
+
+        List<EsqCinco> listEsqCinco = new ArrayList<EsqCinco>();
+
 		int sessenta = 25;
 		int um1 = sessenta - 3;
 		int dois2 = sessenta - 2;
@@ -36,17 +42,19 @@ public class CercaEsqCinco {
 
 						EsqCinco numerosCercados = new EsqCinco();
 						numerosCercados.setNumEsqCinco(numeros);
-
-						numerosCercadoDao.gravarEsqCinco(numerosCercados);
+                        listEsqCinco.add(numerosCercados);
 					}
 				}
 			}
 		}
+		numerosCercadoDao.gravarEsqCinco(listEsqCinco);
 	}
 
 	public void cerca3(int tresInicio, int tresTermino) {
+
+		List<EsqCinco> listEsqCinco = new ArrayList<EsqCinco>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 2;
 		int dois2 = sessenta - 1;
 		int tres3 = tresTermino;
@@ -67,17 +75,18 @@ public class CercaEsqCinco {
 
 					EsqCinco numerosCercados = new EsqCinco();
 					numerosCercados.setNumEsqCinco(numeros);
-
-					numerosCercadoDao.gravarEsqCinco(numerosCercados);
+                    listEsqCinco.add(numerosCercados);
 				}
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqCinco(listEsqCinco);
 	}
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
+        
+        List<EsqCinco> listEsqCinco = new ArrayList<EsqCinco>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 1;
 		int dois2 = numTerminaCom; // terminar neste número
 		int[] resulMega = new int[26];
@@ -94,10 +103,10 @@ public class CercaEsqCinco {
 
 				EsqCinco numerosCercados = new EsqCinco();
 				numerosCercados.setNumEsqCinco(numeros);
-
-				numerosCercadoDao.gravarEsqCinco(numerosCercados);
+				listEsqCinco.add(numerosCercados);
+				
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqCinco(listEsqCinco);
 	}
 }

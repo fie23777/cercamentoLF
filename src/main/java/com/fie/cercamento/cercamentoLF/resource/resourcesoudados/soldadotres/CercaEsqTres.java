@@ -1,5 +1,8 @@
 package com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +14,9 @@ public class CercaEsqTres {
 	private EsqLotofacilDao numerosCercadoDao;
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
+
+		List<EsqTres> listEsqTres = new ArrayList<EsqTres>();
+
 		int sessenta = 25;
 		int um1 = sessenta - 3;
 		int dois2 = sessenta - 2;
@@ -36,18 +42,19 @@ public class CercaEsqTres {
 
 						EsqTres numerosCercados = new EsqTres();
 						numerosCercados.setNumEsqTres(numeros);
-
-						numerosCercadoDao.gravarEsqTres(numerosCercados);
-
+                        listEsqTres.add(numerosCercados);
 					}
 				}
 			}
 		}
+		numerosCercadoDao.gravarEsqTres(listEsqTres);
 	}
 
 	public void cerca3(int tresInicio, int tresTermino) {
+
+        List<EsqTres> listEsqTres = new ArrayList<EsqTres>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 2;
 		int dois2 = sessenta - 1;
 		int tres3 = tresTermino;
@@ -68,17 +75,18 @@ public class CercaEsqTres {
 
 					EsqTres numerosCercados = new EsqTres();
 					numerosCercados.setNumEsqTres(numeros);
-
-					numerosCercadoDao.gravarEsqTres(numerosCercados);
+					listEsqTres.add(numerosCercados);
 				}
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqTres(listEsqTres);
 	}
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
+
+       List<EsqTres> listEsqTres = new ArrayList<EsqTres>();
+
 		int sessenta = 25;
-		int valor = 0;
 		int um1 = sessenta - 1;
 		int dois2 = numTerminaCom; // terminar neste número
 		int[] resulMega = new int[26];
@@ -95,10 +103,9 @@ public class CercaEsqTres {
 
 				EsqTres numerosCercados = new EsqTres();
 				numerosCercados.setNumEsqTres(numeros);
-
-				numerosCercadoDao.gravarEsqTres(numerosCercados);
+				listEsqTres.add(numerosCercados);
 			}
 		}
-		System.out.println("Qauntidades de combinação " + valor);
+		numerosCercadoDao.gravarEsqTres(listEsqTres);;
 	}
 }
