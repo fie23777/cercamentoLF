@@ -13,7 +13,7 @@ public class CercaEsqUm {
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
 
-        List<EsqUm> listEsqUm = new ArrayList<EsqUm>();
+        List<EsqUmModel> listEsqUm = new ArrayList<EsqUmModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 3;
@@ -39,7 +39,7 @@ public class CercaEsqUm {
 
 						System.out.println(numeros);
 
-						EsqUm numerosCercados = new EsqUm();
+						EsqUmModel numerosCercados = new EsqUmModel();
 						numerosCercados.setNumEsqUm(numeros);
 						listEsqUm.add(numerosCercados);
 					}
@@ -51,7 +51,7 @@ public class CercaEsqUm {
 
 	public void cerca3(int tresInicio, int tresTermino) {
 
-        List<EsqUm> listEsqUm = new ArrayList<EsqUm>();
+        List<EsqUmModel> listEsqUm = new ArrayList<EsqUmModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 2;
@@ -72,7 +72,7 @@ public class CercaEsqUm {
 
 					System.out.println(numeros);
 
-					EsqUm numerosCercados = new EsqUm();
+					EsqUmModel numerosCercados = new EsqUmModel();
 					numerosCercados.setNumEsqUm(numeros);
                     listEsqUm.add(numerosCercados);
 
@@ -84,7 +84,7 @@ public class CercaEsqUm {
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
 
-        List<EsqUm> listEsqUm = new ArrayList<EsqUm>();
+        List<EsqUmModel> listEsqUm = new ArrayList<EsqUmModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 1;
@@ -101,7 +101,7 @@ public class CercaEsqUm {
 
 				System.out.println(numeros);
 
-				EsqUm numerosCercados = new EsqUm();
+				EsqUmModel numerosCercados = new EsqUmModel();
 				numerosCercados.setNumEsqUm(numeros);
                 listEsqUm.add(numerosCercados);
 			}

@@ -15,7 +15,7 @@ public class CercaEsqCinco {
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
 
-        List<EsqCinco> listEsqCinco = new ArrayList<EsqCinco>();
+        List<EsqCincoModel> listEsqCinco = new ArrayList<EsqCincoModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 3;
@@ -40,7 +40,7 @@ public class CercaEsqCinco {
 
 						System.out.println(numeros);
 
-						EsqCinco numerosCercados = new EsqCinco();
+						EsqCincoModel numerosCercados = new EsqCincoModel();
 						numerosCercados.setNumEsqCinco(numeros);
                         listEsqCinco.add(numerosCercados);
 					}
@@ -52,7 +52,7 @@ public class CercaEsqCinco {
 
 	public void cerca3(int tresInicio, int tresTermino) {
 
-		List<EsqCinco> listEsqCinco = new ArrayList<EsqCinco>();
+		List<EsqCincoModel> listEsqCinco = new ArrayList<EsqCincoModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 2;
@@ -73,7 +73,7 @@ public class CercaEsqCinco {
 
 					System.out.println(numeros);
 
-					EsqCinco numerosCercados = new EsqCinco();
+					EsqCincoModel numerosCercados = new EsqCincoModel();
 					numerosCercados.setNumEsqCinco(numeros);
                     listEsqCinco.add(numerosCercados);
 				}
@@ -84,7 +84,7 @@ public class CercaEsqCinco {
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
         
-        List<EsqCinco> listEsqCinco = new ArrayList<EsqCinco>();
+        List<EsqCincoModel> listEsqCinco = new ArrayList<EsqCincoModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 1;
@@ -101,7 +101,7 @@ public class CercaEsqCinco {
 
 				System.out.println(numeros);
 
-				EsqCinco numerosCercados = new EsqCinco();
+				EsqCincoModel numerosCercados = new EsqCincoModel();
 				numerosCercados.setNumEsqCinco(numeros);
 				listEsqCinco.add(numerosCercados);
 				

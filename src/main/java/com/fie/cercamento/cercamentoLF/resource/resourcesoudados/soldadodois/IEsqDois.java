@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IEsqDois extends JpaRepository<EsqDois, Integer>{
+public interface IEsqDois extends JpaRepository<EsqDoisModel, Integer>{
     
 }

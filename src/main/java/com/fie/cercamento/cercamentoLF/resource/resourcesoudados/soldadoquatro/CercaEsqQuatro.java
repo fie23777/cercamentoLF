@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.EsqLotofacilDao;
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.EsqDois;
+import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.EsqDoisModel;
 
 @Component
 public class CercaEsqQuatro {
@@ -16,7 +16,7 @@ public class CercaEsqQuatro {
 
 	public void cerca4(int numIniciaCom1, int numTerminaCom2) {
 
-		List<EsqQuatro> listEsqQuatro = new ArrayList<EsqQuatro>();
+		List<EsqQuatroModel> listEsqQuatro = new ArrayList<EsqQuatroModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 3;
@@ -41,7 +41,7 @@ public class CercaEsqQuatro {
 
 						System.out.println(numeros);
 
-						EsqQuatro numerosCercados = new EsqQuatro();
+						EsqQuatroModel numerosCercados = new EsqQuatroModel();
 						numerosCercados.setNumEsqQuatro(numeros);
                         listEsqQuatro.add(numerosCercados);
 					}
@@ -53,7 +53,7 @@ public class CercaEsqQuatro {
 
 	public void cerca3(int tresInicio, int tresTermino) {
 
-		List<EsqQuatro> listEsqQuatro = new ArrayList<EsqQuatro>();
+		List<EsqQuatroModel> listEsqQuatro = new ArrayList<EsqQuatroModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 2;
@@ -74,7 +74,7 @@ public class CercaEsqQuatro {
 
 					System.out.println(numeros);
 
-					EsqQuatro numerosCercados = new EsqQuatro();
+					EsqQuatroModel numerosCercados = new EsqQuatroModel();
 					numerosCercados.setNumEsqQuatro(numeros);
 					listEsqQuatro.add(numerosCercados);	
 				}
@@ -85,7 +85,7 @@ public class CercaEsqQuatro {
 
 	public void cerca2(int numIniciaCom, int numTerminaCom) {
 
-		List<EsqQuatro> listEsqQuatro = new ArrayList<EsqQuatro>();
+		List<EsqQuatroModel> listEsqQuatro = new ArrayList<EsqQuatroModel>();
 
 		int sessenta = 25;
 		int um1 = sessenta - 1;
@@ -102,7 +102,7 @@ public class CercaEsqQuatro {
 
 				System.out.println(numeros);
 
-				EsqQuatro numerosCercados = new EsqQuatro();
+				EsqQuatroModel numerosCercados = new EsqQuatroModel();
 				numerosCercados.setNumEsqQuatro(numeros);
 				listEsqQuatro.add(numerosCercados);	
 			}
