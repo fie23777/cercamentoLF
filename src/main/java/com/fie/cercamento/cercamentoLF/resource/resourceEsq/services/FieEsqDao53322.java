@@ -40,6 +40,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
+import org.springframework.stereotype.Repository;
+
 @Repository
 @Transactional
 public class FieEsqDao53322 {
