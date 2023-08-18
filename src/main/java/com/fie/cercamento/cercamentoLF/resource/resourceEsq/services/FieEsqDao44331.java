@@ -36,6 +36,7 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq434
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq44133;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq44313;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq44331;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository44331;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -47,7 +48,7 @@ public class FieEsqDao44331 {
 	@PersistenceContext
 	private EntityManager manager;
 	
-	private IFieEsqDao44331Repository iFieEsqDao44331Repository ;
+	private Irepository44331 irepository44331 ;
 	
 	private int limite = 20;
 	
@@ -114,7 +115,7 @@ public class FieEsqDao44331 {
 		manager.persist(esquemas);
 	}
 	public void gravarEsq44331(List<FieEsq44331> listaFieEsq44331){//
-		iFieEsqDao44331Repository.saveAll(listaFieEsq44331);
+		irepository44331.saveAll(listaFieEsq44331);
 	}
 	public void gravarEsq41433(FieEsq41433 esquemas){//
 		manager.persist(esquemas);
