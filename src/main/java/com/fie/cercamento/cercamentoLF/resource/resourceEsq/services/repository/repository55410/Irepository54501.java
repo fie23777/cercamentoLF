@@ -3,6 +3,8 @@ package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55410.FieEsq54501;
+
 @Repository
 public interface Irepository54501 extends JpaRepository<FieEsq54501, Integer> {
     
