@@ -126,13 +126,13 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55410.Irepository55401;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55410.Irepository55410;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.TypedQuery;
+import jakarta.saveAllence.EntityManager;
+import jakarta.saveAllence.saveAllenceContext;
+import jakarta.saveAllence.TypedQuery;
 
 @Transactional
 public class FieEsqDao55410 {
-	@PersistenceContext
+	@saveAllenceContext
 	private EntityManager manager;
 	
 	private int limite = 20;
@@ -198,185 +198,185 @@ public class FieEsqDao55410 {
 	@Autowired private Irepository55401 irepository55401;
 	@Autowired private Irepository55410 irepository55410;
 	
-	public void gravarEsq41550(FieEsq41550 esquemas){  
-		manager.persist(esquemas);
+	public void gravarEsq41550(List<FieEsq41550> esquemas){  
+		irepository41550.saveAll(esquemas);
 	}
-	public void gravarEsq41505(FieEsq41505 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq41505(List<FieEsq41505> esquemas){
+		irepository41505.saveAll(esquemas);
 	}
-	public void gravarEsq41055(FieEsq41055 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq41055(List<FieEsq41055> esquemas){
+		irepository41055.saveAll(esquemas);
 	}
-	public void gravarEsq45150(FieEsq45150 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq45150(List<FieEsq45150> esquemas){
+		irepository45150.saveAll(esquemas);
 	}
-	public void gravarEsq45105(FieEsq45105 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq45105(List<FieEsq45105> esquemas){//
+		irepository45105.saveAll(esquemas);
 	}
-	public void gravarEsq45510(FieEsq45510 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq45510(List<FieEsq45510> esquemas){//
+		irepository45510.saveAll(esquemas);
 	}
-	public void gravarEsq45501(FieEsq45501 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq45501(List<FieEsq45501> esquemas){//
+		irepository45501.saveAll(esquemas);
 	}
-	public void gravarEsq40155(FieEsq40155 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq40155(List<FieEsq40155> esquemas){//
+		irepository40155.saveAll(esquemas);
 	}
-	public void gravarEsq40515(FieEsq40515 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq40515(List<FieEsq40515> esquemas){//
+		irepository40515.saveAll(esquemas);
 	}
-	public void gravarEsq40551(FieEsq40551 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq40551(List<FieEsq40551> esquemas){//
+		irepository40551.saveAll(esquemas);
 	}
-	public void gravarEsq45015(FieEsq45015 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq45015(List<FieEsq45015> esquemas){//
+		irepository45015.saveAll(esquemas);
 	}
-	public void gravarEsq45051(FieEsq45051 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq45051(List<FieEsq45051> esquemas){//
+		irepository45051.saveAll(esquemas);
 	}
-	public void gravarEsq14550(FieEsq14550 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq14550(List<FieEsq14550> esquemas){//
+		irepository14550.saveAll(esquemas);
 	}
-	public void gravarEsq14505(FieEsq14505 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq14505(List<FieEsq14505> esquemas){//
+		irepository14505.saveAll(esquemas);
 	}
-	public void gravarEsq14055(FieEsq14055 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq14055(List<FieEsq14055> esquemas){//
+		irepository14055.saveAll(esquemas);
 	}
-	public void gravarEsq15450(FieEsq15450 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq15450(List<FieEsq15450> esquemas){//
+		irepository15450.saveAll(esquemas);
 	}
-	public void gravarEsq15405(FieEsq15405 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq15405(List<FieEsq15405> esquemas){//
+		irepository15405.saveAll(esquemas);
 	}
-	public void gravarEsq15540(FieEsq15540 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq15540(List<FieEsq15540> esquemas){//
+		irepository15540.saveAll(esquemas);
 	}
-	public void gravarEsq15504(FieEsq15504 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq15504(List<FieEsq15504> esquemas){//
+		irepository15504.saveAll(esquemas);
 	}
-	public void gravarEsq15045(FieEsq15045 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq15045(List<FieEsq15045> esquemas){//
+		irepository15045.saveAll(esquemas);
 	}
-	public void gravarEsq15054(FieEsq15054 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq15054(List<FieEsq15054> esquemas){//
+		irepository15054.saveAll(esquemas);
 	}
-	public void gravarEsq10455(FieEsq10455 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq10455(List<FieEsq10455> esquemas){//
+		irepository10455.saveAll(esquemas);
 	}
-	public void gravarEsq10545(FieEsq10545 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq10545(List<FieEsq10545> esquemas){//
+		irepository10545.saveAll(esquemas);
 	}
-	public void gravarEsq10554(FieEsq10554 esquemas){//
-		manager.persist(esquemas);	
+	public void gravarEsq10554(List<FieEsq10554> esquemas){//
+		irepository10554.saveAll(esquemas);	
 	}
-	public void gravarEsq54150(FieEsq54150 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq54150(List<FieEsq54150> esquemas){//
+		irepository54150.saveAll(esquemas);
 	}
-	public void gravarEsq54105(FieEsq54105 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq54105(List<FieEsq54105> esquemas){//
+		irepository54105.saveAll(esquemas);
 	}
-	public void gravarEsq54510(FieEsq54510 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq54510(List<FieEsq54510> esquemas){//
+		irepository54510.saveAll(esquemas);
 	}
-	public void gravarEsq54501(FieEsq54501 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq54501(List<FieEsq54501> esquemas){//
+		irepository54501.saveAll(esquemas);
 	}
-	public void gravarEsq54015(FieEsq54015 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq54015(List<FieEsq54015> esquemas){//
+		irepository54015.saveAll(esquemas);
 	}
-	public void gravarEsq54051(FieEsq54051 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq54051(List<FieEsq54051> esquemas){//
+		irepository54051.saveAll(esquemas);
 	}
-	public void gravarEsq51450(FieEsq51450 esquemas){  
-		manager.persist(esquemas);
+	public void gravarEsq51450(List<FieEsq51450> esquemas){  
+		irepository51450.saveAll(esquemas);
 	}
-	public void gravarEsq51405(FieEsq51405 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq51405(List<FieEsq51405> esquemas){
+		irepository51405.saveAll(esquemas);
 	}
-	public void gravarEsq51540(FieEsq51540 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq51540(List<FieEsq51540> esquemas){
+		irepository51540.saveAll(esquemas);
 	}
-	public void gravarEsq51504(FieEsq51504 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq51504(List<FieEsq51504> esquemas){
+		irepository51504.saveAll(esquemas);
 	}
-	public void gravarEsq51045(FieEsq51045 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq51045(List<FieEsq51045> esquemas){//
+		irepository51045.saveAll(esquemas);
 	}
-	public void gravarEsq51054(FieEsq51054 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq51054(List<FieEsq51054> esquemas){//
+		irepository51054.saveAll(esquemas);
 	}
-	public void gravarEsq55410(FieEsq55410 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq55410(List<FieEsq55410> esquemas){//
+		irepository55410.saveAll(esquemas);
 	}
-	public void gravarEsq55401(FieEsq55401 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq55401(List<FieEsq55401> esquemas){//
+		irepository55401.saveAll(esquemas);
 	}
-	public void gravarEsq55140(FieEsq55140 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq55140(List<FieEsq55140> esquemas){//
+		irepository55140.saveAll(esquemas);
 	}
-	public void gravarEsq55104(FieEsq55104 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq55104(List<FieEsq55104> esquemas){//
+		irepository55104.saveAll(esquemas);
 	}
-	public void gravarEsq55041(FieEsq55041 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq55041(List<FieEsq55041> esquemas){//
+		irepository55041.saveAll(esquemas);
 	}
-	public void gravarEsq55014(FieEsq55014 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq55014(List<FieEsq55014> esquemas){//
+		irepository55014.saveAll(esquemas);
 	}
-	public void gravarEsq50415(FieEsq50415 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq50415(List<FieEsq50415> esquemas){//
+		irepository50415.saveAll(esquemas);
 	}
-	public void gravarEsq50451(FieEsq50451 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq50451(List<FieEsq50451> esquemas){//
+		irepository50451.saveAll(esquemas);
 	}
-	public void gravarEsq50145(FieEsq50145 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq50145(List<FieEsq50145> esquemas){//
+		irepository50145.saveAll(esquemas);
 	}
-	public void gravarEsq50154(FieEsq50154 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq50154(List<FieEsq50154> esquemas){//
+		irepository50154.saveAll(esquemas);
 	}
-	public void gravarEsq50541(FieEsq50541 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq50541(List<FieEsq50541> esquemas){//
+		irepository50541.saveAll(esquemas);
 	}
-	public void gravarEsq50514(FieEsq50514 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq50514(List<FieEsq50514> esquemas){//
+		irepository50514.saveAll(esquemas);
 	}
-	public void gravarEsq04155(FieEsq04155 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq04155(List<FieEsq04155> esquemas){//
+		irepository04155.saveAll(esquemas);
 	}
-	public void gravarEsq04515(FieEsq04515 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq04515(List<FieEsq04515> esquemas){//
+		irepository04515.saveAll(esquemas);
 	}
-	public void gravarEsq04551(FieEsq04551 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq04551(List<FieEsq04551> esquemas){//
+		irepository04551.saveAll(esquemas);
 	}
-	public void gravarEsq01455(FieEsq01455 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq01455(List<FieEsq01455> esquemas){//
+		irepository01455.saveAll(esquemas);
 	}
-	public void gravarEsq01545(FieEsq01545 esquemas){//
-		manager.persist(esquemas);	
+	public void gravarEsq01545(List<FieEsq01545> esquemas){//
+		irepository01545.saveAll(esquemas);	
 	}
-	public void gravarEsq01554(FieEsq01554 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq01554(List<FieEsq01554> esquemas){//
+		irepository01554.saveAll(esquemas);
 	}
-	public void gravarEsq05415(FieEsq05415 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq05415(List<FieEsq05415> esquemas){//
+		irepository05415.saveAll(esquemas);
 	}
-	public void gravarEsq05451(FieEsq05451 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq05451(List<FieEsq05451> esquemas){//
+		irepository05451.saveAll(esquemas);
 	}
-	public void gravarEsq05145(FieEsq05145 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq05145(List<FieEsq05145> esquemas){//
+		irepository05145.saveAll(esquemas);
 	}
-	public void gravarEsq05154(FieEsq05154 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq05154(List<FieEsq05154> esquemas){//
+		irepository05154.saveAll(esquemas);
 	}
-	public void gravarEsq05541(FieEsq05541 esquemas){//
-		manager.persist(esquemas);	
+	public void gravarEsq05541(List<FieEsq05541> esquemas){//
+		irepository05541.saveAll(esquemas);	
 	}	
-	public void gravarEsq05514(FieEsq05514 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq05514(List<FieEsq05514> esquemas){//
+		irepository05514.saveAll(esquemas);
 	}
 	
 	
