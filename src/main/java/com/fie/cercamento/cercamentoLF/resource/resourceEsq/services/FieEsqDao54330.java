@@ -1,10 +1,8 @@
 package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 
-
 import java.util.List;
 
-
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq03345;
@@ -67,20 +65,138 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq534
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq54033;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq54303;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq54330;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository03345;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository03354;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository03435;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository03453;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository03534;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository03543;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository04335;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository04353;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository04533;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository05334;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository05343;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository05433;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository30345;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository30354;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository30435;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository30453;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository30534;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository30543;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository33045;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository33054;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository33405;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository33450;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository33504;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository33540;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository34035;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository34053;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository34305;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository34350;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository34503;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository34530;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository35034;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository35043;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository35304;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository35340;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository35403;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository35430;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository40335;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository40353;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository40533;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository43035;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository43053;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository43305;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository43350;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository43503;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository43530;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository45033;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository45303;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository45330;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository50334;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository50343;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository50433;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository53034;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository53043;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository53304;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository53340;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository53403;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository53430;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository54033;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository54303;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository54330.Irepository54330;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
 @Transactional
 public class FieEsqDao54330 {
 	@PersistenceContext
 	private EntityManager manager;
 	
 	private int limite = 20;
+
+	@Autowired private Irepository03345 irepository03345;
+	@Autowired private Irepository03354 irepository03354;
+	@Autowired private Irepository03435 irepository03435;
+	@Autowired private Irepository03453 irepository03453;
+	@Autowired private Irepository03534 irepository03534;
+	@Autowired private Irepository03543 irepository03543;
+	@Autowired private Irepository04335 irepository04335;
+	@Autowired private Irepository04353 irepository04353;
+	@Autowired private Irepository04533 irepository04533;
+	@Autowired private Irepository05334 irepository05334;
+	@Autowired private Irepository05343 irepository05343;
+	@Autowired private Irepository05433 irepository05433;
+	@Autowired private Irepository30345 irepository30345;
+	@Autowired private Irepository30354 irepository30354;
+	@Autowired private Irepository30435 irepository30435;
+	@Autowired private Irepository30453 irepository30453;
+	@Autowired private Irepository30534 irepository30534;
+	@Autowired private Irepository30543 irepository30543;
+	@Autowired private Irepository33045 irepository33045;
+	@Autowired private Irepository33054 irepository33054;
+	@Autowired private Irepository33405 irepository33405;
+	@Autowired private Irepository33450 irepository33450;
+	@Autowired private Irepository33504 irepository33504;
+	@Autowired private Irepository33540 irepository33540;
+	@Autowired private Irepository34035 irepository34035;
+	@Autowired private Irepository34053 irepository34053;
+	@Autowired private Irepository34305 irepository34305;
+	@Autowired private Irepository34350 irepository34350;
+	@Autowired private Irepository34503 irepository34503;
+	@Autowired private Irepository34530 irepository34530;
+	@Autowired private Irepository35034 irepository35034;
+	@Autowired private Irepository35043 irepository35043;
+	@Autowired private Irepository35304 irepository35304;
+	@Autowired private Irepository35340 irepository35340;
+	@Autowired private Irepository35403 irepository35403;
+	@Autowired private Irepository35430 irepository35430;
+	@Autowired private Irepository40335 irepository40335;
+	@Autowired private Irepository40353 irepository40353;
+	@Autowired private Irepository40533 irepository40533;
+	@Autowired private Irepository43035 irepository43035;
+	@Autowired private Irepository43053 irepository43053;
+	@Autowired private Irepository43305 irepository43305;
+	@Autowired private Irepository43350 irepository43350;
+	@Autowired private Irepository43503 irepository43503;
+	@Autowired private Irepository43530 irepository43530;
+	@Autowired private Irepository45033 irepository45033;
+	@Autowired private Irepository45303 irepository45303;
+	@Autowired private Irepository45330 irepository45330;
+	@Autowired private Irepository50334 irepository50334;
+	@Autowired private Irepository50343 irepository50343;
+	@Autowired private Irepository50433 irepository50433;
+	@Autowired private Irepository53034 irepository53034;
+	@Autowired private Irepository53043 irepository53043;
+	@Autowired private Irepository53304 irepository53304;
+	@Autowired private Irepository53340 irepository53340;
+	@Autowired private Irepository53403 irepository53403;
+	@Autowired private Irepository53430 irepository53430;
+	@Autowired private Irepository54033 irepository54033;
+	@Autowired private Irepository54303 irepository54303;
+	@Autowired private Irepository54330 irepository54330;
 	
 	public void gravarEsq54330(FieEsq54330 esquemas){  
 		manager.persist(esquemas);

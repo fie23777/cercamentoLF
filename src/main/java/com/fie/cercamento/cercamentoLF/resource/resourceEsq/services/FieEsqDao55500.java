@@ -2,7 +2,7 @@ package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq00555;
@@ -15,20 +15,38 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq505
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq55005;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq55050;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq55500;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository00555;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository05055;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository05505;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository05550;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository50055;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository50505;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository50550;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository55005;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository55050;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55500.Irepository55500;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
 @Transactional
 public class FieEsqDao55500 {
 	@PersistenceContext
 	private EntityManager manager;
 	
 	private int limite = 20;
+
+	@Autowired private Irepository00555 irepository00555;
+	@Autowired private Irepository05055 irepository05055;
+	@Autowired private Irepository05505 irepository05505;
+	@Autowired private Irepository05550 irepository05550;
+	@Autowired private Irepository50055 irepository50055;
+	@Autowired private Irepository50505 irepository50505;
+	@Autowired private Irepository50550 irepository50550;
+	@Autowired private Irepository55005 irepository55005;
+	@Autowired private Irepository55050 irepository55050;
+	@Autowired private Irepository55500 irepository55500; 
 	
 	//para o esquema fie gravar em banco
 	

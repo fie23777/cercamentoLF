@@ -1,9 +1,8 @@
 package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 
-
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq13344;
@@ -36,113 +35,170 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq434
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq44133;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq44313;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44331.FieEsq44331;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository13344;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository13434;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository13443;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository14334;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository14343;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository14433;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository31344;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository31434;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository31443;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository33144;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository33414;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository33441;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository34134;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository34143;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository34314;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository34341;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository34413;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository34431;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository41334;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository41343;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository41433;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository43134;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository43143;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository43314;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository43341;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository43413;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository43431;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository44133;
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository44313;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository44331.Irepository44331;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-@Repository
 @Transactional
 public class FieEsqDao44331 {
 	@PersistenceContext
 	private EntityManager manager;
 	
-	private Irepository44331 irepository44331 ;
+	@Autowired private Irepository13344 irepository13344;
+	@Autowired private Irepository13434 irepository13434;
+	@Autowired private Irepository13443 irepository13443;
+	@Autowired private Irepository14334 irepository14334;
+	@Autowired private Irepository14343 irepository14343;
+	@Autowired private Irepository14433 irepository14433;
+	@Autowired private Irepository31344 irepository31344;
+	@Autowired private Irepository31434 irepository31434;
+	@Autowired private Irepository31443 irepository31443;
+	@Autowired private Irepository33144 irepository33144;
+	@Autowired private Irepository33414 irepository33414;
+	@Autowired private Irepository33441 irepository33441;
+	@Autowired private Irepository34134 irepository34134;
+	@Autowired private Irepository34143 irepository34143;
+	@Autowired private Irepository34314 irepository34314;
+	@Autowired private Irepository34341 irepository34341;
+	@Autowired private Irepository34413 irepository34413;
+	@Autowired private Irepository34431 irepository34431;
+	@Autowired private Irepository41334 irepository41334;
+	@Autowired private Irepository41343 irepository41343;
+	@Autowired private Irepository41433 irepository41433;
+	@Autowired private Irepository43134 irepository43134;
+	@Autowired private Irepository43143 irepository43143;
+	@Autowired private Irepository43314 irepository43314;
+	@Autowired private Irepository43341 irepository43341;
+	@Autowired private Irepository43413 irepository43413;
+	@Autowired private Irepository43431 irepository43431;
+	@Autowired private Irepository44133 irepository44133;
+	@Autowired private Irepository44313 irepository44313;
+	@Autowired private Irepository44331 irepository44331; 
 	
 	private int limite = 20;
 	
 	//para o esquema fie gravar em banco
 	
-	public void gravarEsq33144(FieEsq33144 esquemas){  
-		manager.persist(esquemas);
+	public void gravarEsq33144(List<FieEsq33144> esquemas){  
+		irepository33144.saveAll(esquemas);
 	}
-	public void gravarEsq33414(FieEsq33414 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq33414(List<FieEsq33414> esquemas){
+		irepository33414.saveAll(esquemas);
 	}
-	public void gravarEsq33441(FieEsq33441 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq33441(List<FieEsq33441> esquemas){
+		irepository33441.saveAll(esquemas);
 	}
-	public void gravarEsq31344(FieEsq31344 esquemas){
-		manager.persist(esquemas);
+	public void gravarEsq31344(List<FieEsq31344> esquemas){
+		irepository31344.saveAll(esquemas);
 	}
-	public void gravarEsq31434(FieEsq31434 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq31434(List<FieEsq31434> esquemas){//
+		irepository31434.saveAll(esquemas);
 	}
-	public void gravarEsq31443(FieEsq31443 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq31443(List<FieEsq31443> esquemas){//
+		irepository31443.saveAll(esquemas);
 	}
-	public void gravarEsq34314(FieEsq34314 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq34314(List<FieEsq34314> esquemas){//
+		irepository34314.saveAll(esquemas);
 	}
-	public void gravarEsq34341(FieEsq34341 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq34341(List<FieEsq34341> esquemas){//
+		irepository34341.saveAll(esquemas);
 	}
-	public void gravarEsq34134(FieEsq34134 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq34134(List<FieEsq34134> esquemas){//
+		irepository34134.saveAll(esquemas);
 	}
-	public void gravarEsq34143(FieEsq34143 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq34143(List<FieEsq34143> esquemas){//
+		irepository34143.saveAll(esquemas);
 	}
-	public void gravarEsq34431(FieEsq34431 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq34431(List<FieEsq34431> esquemas){//
+		irepository34431.saveAll(esquemas);
 	}
-	public void gravarEsq34413(FieEsq34413 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq34413(List<FieEsq34413> esquemas){//
+		irepository34413.saveAll(esquemas);
 	}
-	public void gravarEsq13344(FieEsq13344 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq13344(List<FieEsq13344> esquemas){//
+		irepository13344.saveAll(esquemas);
 	}
-	public void gravarEsq13434(FieEsq13434 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq13434(List<FieEsq13434> esquemas){//
+		irepository13434.saveAll(esquemas);
 	}
-	public void gravarEsq13443(FieEsq13443 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq13443(List<FieEsq13443> esquemas){//
+		irepository13443.saveAll(esquemas);
 	}
-	public void gravarEsq14433(FieEsq14433 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq14433(List<FieEsq14433> esquemas){//
+		irepository14433.saveAll(esquemas);
 	}
-	public void gravarEsq14343(FieEsq14343 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq14343(List<FieEsq14343> esquemas){//
+		irepository14343.saveAll(esquemas);
 	}
-	public void gravarEsq14334(FieEsq14334 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq14334(List<FieEsq14334> esquemas){//
+		irepository14334.saveAll(esquemas);
 	}
-	public void gravarEsq44133(FieEsq44133 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq44133(List<FieEsq44133> esquemas){//
+		irepository44133.saveAll(esquemas);
 	}
-	public void gravarEsq44313(FieEsq44313 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq44313(List<FieEsq44313> esquemas){//
+		irepository44313.saveAll(esquemas);
 	}
 	public void gravarEsq44331(List<FieEsq44331> listaFieEsq44331){//
 		irepository44331.saveAll(listaFieEsq44331);
 	}
-	public void gravarEsq41433(FieEsq41433 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq41433(List<FieEsq41433> esquemas){//
+		irepository41433.saveAll(esquemas);
 	}
-	public void gravarEsq41343(FieEsq41343 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq41343(List<FieEsq41343> esquemas){//
+		irepository41343.saveAll(esquemas);
 	}
-	public void gravarEsq41334(FieEsq41334 esquemas){//
-		manager.persist(esquemas);	
+	public void gravarEsq41334(List<FieEsq41334> esquemas){//
+		irepository41334.saveAll(esquemas);	
 	}
-	public void gravarEsq43413(FieEsq43413 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq43413(List<FieEsq43413> esquemas){//
+		irepository43413.saveAll(esquemas);
 	}
-	public void gravarEsq43431(FieEsq43431 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq43431(List<FieEsq43431> esquemas){//
+		irepository43431.saveAll(esquemas);
 	}
-	public void gravarEsq43143(FieEsq43143 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq43143(List<FieEsq43143> esquemas){//
+		irepository43143.saveAll(esquemas);
 	}
-	public void gravarEsq43134(FieEsq43134 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq43134(List<FieEsq43134> esquemas){//
+		irepository43134.saveAll(esquemas);
 	}
-	public void gravarEsq43341(FieEsq43341 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq43341(List<FieEsq43341> esquemas){//
+		irepository43341.saveAll(esquemas);
 	}
-	public void gravarEsq43314(FieEsq43314 esquemas){//
-		manager.persist(esquemas);
+	public void gravarEsq43314(List<FieEsq43314> esquemas){//
+		irepository43314.saveAll(esquemas);
 	}
 	
 	
