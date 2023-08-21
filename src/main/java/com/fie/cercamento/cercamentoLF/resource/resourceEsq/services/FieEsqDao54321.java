@@ -484,8 +484,8 @@ public class FieEsqDao54321 {
 		irepository42513.saveAll(esquemas);
 	}
 
-	public void gravarEsq41325(List<FieEsq42513> esquemas) {//
-		irepository42513.saveAll(esquemas);
+	public void gravarEsq41325(List<FieEsq41325> esquemas) {//
+		irepository41325.saveAll(esquemas);
 	}
 
 	public void gravarEsq41352(List<FieEsq41352> esquemas) {//
