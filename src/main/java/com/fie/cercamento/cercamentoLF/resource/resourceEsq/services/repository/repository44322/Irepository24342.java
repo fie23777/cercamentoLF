@@ -7,5 +7,6 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44322.FieEsq243
 
 @Repository
 public interface Irepository24342 extends JpaRepository<FieEsq24342, Integer> {
+
     
 }

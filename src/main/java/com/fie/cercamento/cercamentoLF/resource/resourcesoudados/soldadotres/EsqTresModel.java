@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "EsqTre")
+@Table(name = "EsqTresModel")
 public class EsqTresModel {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)

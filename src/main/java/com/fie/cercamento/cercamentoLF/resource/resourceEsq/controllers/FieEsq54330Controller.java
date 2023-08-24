@@ -1,9 +1,13 @@
 package com.fie.cercamento.cercamentoLF.resource.resourceEsq.controllers;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq03345;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq03354;
@@ -72,9 +76,14 @@ import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.Esq
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro.EsqQuatroModel;
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres.EsqTresModel;
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum.EsqUmModel;
+import com.fie.cercamento.cercamentoLF.util.ResponseSuccessFie;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RestController
 public class FieEsq54330Controller {
+
+	private static final String FINALIZADO_O_CERCAMENTO_DO_ESQUEMA = "Finalizado o cercamento do esquema";
+
 	@Autowired
 	EsqLotofacilDao numeroList;
 	@Autowired
@@ -125,7 +134,10 @@ public class FieEsq54330Controller {
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq54330")
-	public void cercaFieEsq54330() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq54330() {
+
+		List<FieEsq54330> esqList = new ArrayList<FieEsq54330>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 			   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -145,16 +157,20 @@ public class FieEsq54330Controller {
 
 						FieEsq54330 linhas = new FieEsq54330();
 						linhas.setNumEsq54330(linha);
-						fienumeroList.gravarEsq54330(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq54330(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq54303")
-	public void cercaFieEsq54303() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq54303() {
+
+		List<FieEsq54303> esqList = new ArrayList<FieEsq54303>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -175,16 +191,20 @@ public class FieEsq54330Controller {
 
 						FieEsq54303 linhas = new FieEsq54303();
 						linhas.setNumEsq54303(linha);
-						fienumeroList.gravarEsq54303(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq54303(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq54033")
-	public void cercaFieEsq54033() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq54033() {
+
+		List<FieEsq54033> esqList = new ArrayList<FieEsq54033>();
 		
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -205,16 +225,20 @@ public class FieEsq54330Controller {
 
 						FieEsq54033 linhas = new FieEsq54033();
 						linhas.setNumEsq54033(linha);
-						fienumeroList.gravarEsq54033(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq54033(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq53430")
-	public void cercaFieEsq53430() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq53430() {
+
+		List<FieEsq53430> esqList = new ArrayList<FieEsq53430>();
 		
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -234,16 +258,20 @@ public class FieEsq54330Controller {
 
 						FieEsq53430 linhas = new FieEsq53430();
 						linhas.setNumEsq53430(linha);
-						fienumeroList.gravarEsq53430(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq53430(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq53403")
-	public void cercaFieEsq53403() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq53403() {
+
+		List<FieEsq53403> esqList = new ArrayList<FieEsq53403>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -264,16 +292,20 @@ public class FieEsq54330Controller {
 
 						FieEsq53403 linhas = new FieEsq53403();
 						linhas.setNumEsq53403(linha);
-						fienumeroList.gravarEsq53403(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq53403(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq53340")
-	public void cercaFieEsq53340() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq53340() {
+
+		List<FieEsq53340> esqList = new ArrayList<FieEsq53340>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -293,16 +325,20 @@ public class FieEsq54330Controller {
 
 						FieEsq53340 linhas = new FieEsq53340();
 						linhas.setNumEsq53340(linha);
-						fienumeroList.gravarEsq53340(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq53340(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq53304")
-	public void cercaFieEsq53304() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq53304() {
+
+		List<FieEsq53304> esqList = new ArrayList<FieEsq53304>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -323,16 +359,20 @@ public class FieEsq54330Controller {
 
 						FieEsq53304 linhas = new FieEsq53304();
 						linhas.setNumEsq53304(linha);
-						fienumeroList.gravarEsq53304(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+			fienumeroList.gravarEsq53304(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq50433")
-	public void cercaFieEsq50433() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq50433() {
+
+		List<FieEsq50433> esqList = new ArrayList<FieEsq50433>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -353,16 +393,20 @@ public class FieEsq54330Controller {
 
 						FieEsq50433 linhas = new FieEsq50433();
 						linhas.setNumEsq50433(linha);
-						fienumeroList.gravarEsq50433(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq50433(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq50343")
-	public void cercaFieEsq50343() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq50343() {
+
+		List<FieEsq50343> esqList = new ArrayList<FieEsq50343>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -383,16 +427,20 @@ public class FieEsq54330Controller {
 
 						FieEsq50343 linhas = new FieEsq50343();
 						linhas.setNumEsq50343(linha);
-						fienumeroList.gravarEsq50343(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq50343(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq50334")
-	public void cercaFieEsq50334() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq50334() {
+
+		List<FieEsq50334> esqList = new ArrayList<FieEsq50334>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -413,16 +461,20 @@ public class FieEsq54330Controller {
 
 						FieEsq50334 linhas = new FieEsq50334();
 						linhas.setNumEsq50334(linha);
-						fienumeroList.gravarEsq50334(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq50334(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq53043")
-	public void cercaFieEsq53043() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq53043() {
+
+		List<FieEsq53043> esqList = new ArrayList<FieEsq53043>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -443,16 +495,20 @@ public class FieEsq54330Controller {
 
 						FieEsq53043 linhas = new FieEsq53043();
 						linhas.setNumEsq53043(linha);
-						fienumeroList.gravarEsq53043(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq53043(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq53034")
-	public void cercaFieEsq53034() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq53034() {
+
+		List<FieEsq53034> esqList = new ArrayList<FieEsq53034>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -473,16 +529,20 @@ public class FieEsq54330Controller {
 
 						FieEsq53034 linhas = new FieEsq53034();
 						linhas.setNumEsq53034(linha);
-						fienumeroList.gravarEsq53034(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq53034(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq45330")
-	public void cercaFieEsq45330() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq45330() {
+
+		List<FieEsq45330> esqList = new ArrayList<FieEsq45330>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -502,16 +562,20 @@ public class FieEsq54330Controller {
 
 						FieEsq45330 linhas = new FieEsq45330();
 						linhas.setNumEsq45330(linha);
-						fienumeroList.gravarEsq45330(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq45330(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq45303")
-	public void cercaFieEsq45303() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq45303() {
+
+		List<FieEsq45303> esqList = new ArrayList<FieEsq45303>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -532,16 +596,20 @@ public class FieEsq54330Controller {
 
 						FieEsq45303 linhas = new FieEsq45303();
 						linhas.setNumEsq45303(linha);
-						fienumeroList.gravarEsq45303(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq45303(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq45033")
-	public void cercaFieEsq45033() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq45033() {
+
+		List<FieEsq45033> esqList = new ArrayList<FieEsq45033>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -562,16 +630,20 @@ public class FieEsq54330Controller {
 
 						FieEsq45033 linhas = new FieEsq45033();
 						linhas.setNumEsq45033(linha);
-						fienumeroList.gravarEsq45033(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq45033(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq43530")
-	public void cercaFieEsq43530() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43530() {
+
+		List<FieEsq43530> esqList = new ArrayList<FieEsq43530>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -592,16 +664,20 @@ public class FieEsq54330Controller {
 
 						FieEsq43530 linhas = new FieEsq43530();
 						linhas.setNumEsq43530(linha);
-						fienumeroList.gravarEsq43530(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq43530(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq43503")
-	public void cercaFieEsq43503() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43503() {
+
+		List<FieEsq43503> esqList = new ArrayList<FieEsq43503>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -622,16 +698,20 @@ public class FieEsq54330Controller {
 
 						FieEsq43503 linhas = new FieEsq43503();
 						linhas.setNumEsq43503(linha);
-						fienumeroList.gravarEsq43503(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq43503(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq43350")
-	public void cercaFieEsq43350() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43350() {
+
+		List<FieEsq43350> esqList = new ArrayList<FieEsq43350>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -651,16 +731,20 @@ public class FieEsq54330Controller {
 
 						FieEsq43350 linhas = new FieEsq43350();
 						linhas.setNumEsq43350(linha);
-						fienumeroList.gravarEsq43350(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq43350(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq43305")
-	public void cercaFieEsq43305() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43305() {
+
+		List<FieEsq43305> esqList = new ArrayList<FieEsq43305>();
 
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
@@ -682,16 +766,20 @@ public class FieEsq54330Controller {
 
 						FieEsq43305 linhas = new FieEsq43305();
 						linhas.setNumEsq43305(linha);
-						fienumeroList.gravarEsq43305(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq43305(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq43053")
-	public void cercaFieEsq43053() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43053() {
+
+		List<FieEsq43053> esqList = new ArrayList<FieEsq43053>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -712,16 +800,20 @@ public class FieEsq54330Controller {
 
 						FieEsq43053 linhas = new FieEsq43053();
 						linhas.setNumEsq43053(linha);
-						fienumeroList.gravarEsq43053(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq43053(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq43035")
-	public void cercaFieEsq43035() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43035() {
+
+		List<FieEsq43035> esqList = new ArrayList<FieEsq43035>();
 
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
@@ -743,16 +835,20 @@ public class FieEsq54330Controller {
 
 						FieEsq43035 linhas = new FieEsq43035();
 						linhas.setNumEsq43035(linha);
-						fienumeroList.gravarEsq43035(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq43035(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq40533")
-	public void cercaFieEsq40533() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq40533() {
+
+		List<FieEsq40533> esqList = new ArrayList<FieEsq40533>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -773,17 +869,20 @@ public class FieEsq54330Controller {
 
 						FieEsq40533 linhas = new FieEsq40533();
 						linhas.setNumEsq40533(linha);
-						fienumeroList.gravarEsq40533(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq40533(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq40353")
-	public void cercaFieEsq40353() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq40353() {
 
+		List<FieEsq40353> esqList = new ArrayList<FieEsq40353>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -804,16 +903,20 @@ public class FieEsq54330Controller {
 
 						FieEsq40353 linhas = new FieEsq40353();
 						linhas.setNumEsq40353(linha);
-						fienumeroList.gravarEsq40353(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq40353(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq40335")
-	public void cercaFieEsq40335() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq40335() {
+
+		List<FieEsq40335> esqList = new ArrayList<FieEsq40335>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -834,16 +937,20 @@ public class FieEsq54330Controller {
 
 						FieEsq40335 linhas = new FieEsq40335();
 						linhas.setNumEsq40335(linha);
-						fienumeroList.gravarEsq40335(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq40335(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq35430")
-	public void cercaFieEsq35430() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq35430() {
+
+		List<FieEsq35430> esqList = new ArrayList<FieEsq35430>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -864,16 +971,20 @@ public class FieEsq54330Controller {
 
 						FieEsq35430 linhas = new FieEsq35430();
 						linhas.setNumEsq35430(linha);
-						fienumeroList.gravarEsq35430(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq35430(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq35403")
-	public void cercaFieEsq35403() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq35403() {
+
+		List<FieEsq35403> esqList = new ArrayList<FieEsq35403>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -894,16 +1005,20 @@ public class FieEsq54330Controller {
 
 						FieEsq35403 linhas = new FieEsq35403();
 						linhas.setNumEsq35403(linha);
-						fienumeroList.gravarEsq35403(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq35403(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq35340")
-	public void cercaFieEsq35340() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq35340() {
+
+		List<FieEsq35340> esqList = new ArrayList<FieEsq35340>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -924,16 +1039,20 @@ public class FieEsq54330Controller {
 
 						FieEsq35340 linhas = new FieEsq35340();
 						linhas.setNumEsq35340(linha);
-						fienumeroList.gravarEsq35340(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq35340(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq35304")
-	public void cercaFieEsq35304() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq35304() {
+
+		List<FieEsq35304> esqList = new ArrayList<FieEsq35304>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -953,16 +1072,20 @@ public class FieEsq54330Controller {
 						String linha = linhaUm + linhaDois + linhaTres +linhaCinco;
 						FieEsq35304 linhas = new FieEsq35304();
 						linhas.setNumEsq35304(linha);
-						fienumeroList.gravarEsq35304(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq35304(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq35043")
-	public void cercaFieEsq35043() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq35043() {
+
+		List<FieEsq35043> esqList = new ArrayList<FieEsq35043>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -983,16 +1106,20 @@ public class FieEsq54330Controller {
 
 						FieEsq35043 linhas = new FieEsq35043();
 						linhas.setNumEsq35043(linha);
-						fienumeroList.gravarEsq35043(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq35043(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq35034")
-	public void cercaFieEsq35034() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq35034() {
+
+		List<FieEsq35034> esqList = new ArrayList<FieEsq35034>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1013,16 +1140,20 @@ public class FieEsq54330Controller {
 
 						FieEsq35034 linhas = new FieEsq35034();
 						linhas.setNumEsq35034(linha);
-						fienumeroList.gravarEsq35034(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq35034(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq34530")
-	public void cercaFieEsq34530() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34530() {
+
+		List<FieEsq34530> esqList = new ArrayList<FieEsq34530>();
 
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
@@ -1044,16 +1175,20 @@ public class FieEsq54330Controller {
 
 						FieEsq34530 linhas = new FieEsq34530();
 						linhas.setNumEsq34530(linha);
-						fienumeroList.gravarEsq34530(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq34530(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq34503")
-	public void cercaFieEsq34503() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34503() {
+
+		List<FieEsq34503> esqList = new ArrayList<FieEsq34503>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1074,16 +1209,20 @@ public class FieEsq54330Controller {
 
 						FieEsq34503 linhas = new FieEsq34503();
 						linhas.setNumEsq34503(linha);
-						fienumeroList.gravarEsq34503(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq34503(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq34350")
-	public void cercaFieEsq34350() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34350() {
+
+		List<FieEsq34350> esqList = new ArrayList<FieEsq34350>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1104,16 +1243,20 @@ public class FieEsq54330Controller {
 
 						FieEsq34350 linhas = new FieEsq34350();
 						linhas.setNumEsq34350(linha);
-						fienumeroList.gravarEsq34350(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq34350(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq34305")
-	public void cercaFieEsq34305() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34305() {
+
+		List<FieEsq34305> esqList = new ArrayList<FieEsq34305>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1133,16 +1276,20 @@ public class FieEsq54330Controller {
 						String linha = linhaUm + linhaDois + linhaTres +linhaCinco;
 						FieEsq34305 linhas = new FieEsq34305();
 						linhas.setNumEsq34305(linha);
-						fienumeroList.gravarEsq34305(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq34305(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq34053")
-	public void cercaFieEsq34053() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34053() {
+
+		List<FieEsq34053> esqList = new ArrayList<FieEsq34053>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1163,16 +1310,20 @@ public class FieEsq54330Controller {
 
 						FieEsq34053 linhas = new FieEsq34053();
 						linhas.setNumEsq34053(linha);
-						fienumeroList.gravarEsq34053(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq34053(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq34035")
-	public void cercaFieEsq34035() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34035() {
+
+		List<FieEsq34035> esqList = new ArrayList<FieEsq34035>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1193,16 +1344,20 @@ public class FieEsq54330Controller {
 
 						FieEsq34035 linhas = new FieEsq34035();
 						linhas.setNumEsq34035(linha);
-						fienumeroList.gravarEsq34035(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq34035(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq33540")
-	public void cercaFieEsq33540() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33540() {
+
+		List<FieEsq33540> esqList = new ArrayList<FieEsq33540>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1223,16 +1378,20 @@ public class FieEsq54330Controller {
 
 						FieEsq33540 linhas = new FieEsq33540();
 						linhas.setNumEsq33540(linha);
-						fienumeroList.gravarEsq33540(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq33540(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq33504")
-	public void cercaFieEsq33504() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33504() {
+
+		List<FieEsq33504> esqList = new ArrayList<FieEsq33504>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1253,16 +1412,20 @@ public class FieEsq54330Controller {
 
 						FieEsq33504 linhas = new FieEsq33504();
 						linhas.setNumEsq33504(linha);
-						fienumeroList.gravarEsq33504(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq33504(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq33450")
-	public void cercaFieEsq33450() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33450() {
+
+		List<FieEsq33450> esqList = new ArrayList<FieEsq33450>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1283,16 +1446,20 @@ public class FieEsq54330Controller {
 
 						FieEsq33450 linhas = new FieEsq33450();
 						linhas.setNumEsq33450(linha);
-						fienumeroList.gravarEsq33450(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq33450(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq33405")
-	public void cercaFieEsq33405() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33405() {
+
+		List<FieEsq33405> esqList = new ArrayList<FieEsq33405>();
 
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
@@ -1314,16 +1481,20 @@ public class FieEsq54330Controller {
 
 						FieEsq33405 linhas = new FieEsq33405();
 						linhas.setNumEsq33405(linha);
-						fienumeroList.gravarEsq33405(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq33405(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq33054")
-	public void cercaFieEsq33054() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33054() {
+
+		List<FieEsq33054> esqList = new ArrayList<FieEsq33054>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1343,16 +1514,20 @@ public class FieEsq54330Controller {
 						String linha = linhaUm + linhaDois + linhaQuatro+linhaCinco;
 						FieEsq33054 linhas = new FieEsq33054();
 						linhas.setNumEsq33054(linha);
-						fienumeroList.gravarEsq33054(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq33054(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq33045")
-	public void cercaFieEsq33045() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33045() {
+
+		List<FieEsq33045> esqList = new ArrayList<FieEsq33045>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1373,16 +1548,20 @@ public class FieEsq54330Controller {
 
 						FieEsq33045 linhas = new FieEsq33045();
 						linhas.setNumEsq33045(linha);
-						fienumeroList.gravarEsq33045(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq33045(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq30543")
-	public void cercaFieEsq30543() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq30543() {
+
+		List<FieEsq30543> esqList = new ArrayList<FieEsq30543>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1403,16 +1582,20 @@ public class FieEsq54330Controller {
 
 						FieEsq30543 linhas = new FieEsq30543();
 						linhas.setNumEsq30543(linha);
-						fienumeroList.gravarEsq30543(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq30543(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq30534")
-	public void cercaFieEsq30534() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq30534() {
+
+		List<FieEsq30534> esqList = new ArrayList<FieEsq30534>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1432,16 +1615,20 @@ public class FieEsq54330Controller {
 						String linha = linhaUm +  linhaTres + linhaQuatro+linhaCinco;
 						FieEsq30534 linhas = new FieEsq30534();
 						linhas.setNumEsq30534(linha);
-						fienumeroList.gravarEsq30534(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq30534(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq30453")
-	public void cercaFieEsq30453() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq30453() {
+
+		List<FieEsq30453> esqList = new ArrayList<FieEsq30453>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1462,16 +1649,20 @@ public class FieEsq54330Controller {
 
 						FieEsq30453 linhas = new FieEsq30453();
 						linhas.setNumEsq30453(linha);
-						fienumeroList.gravarEsq30453(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq30453(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq30435")
-	public void cercaFieEsq30435() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq30435() {
+
+		List<FieEsq30435> esqList = new ArrayList<FieEsq30435>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1492,16 +1683,20 @@ public class FieEsq54330Controller {
 
 						FieEsq30435 linhas = new FieEsq30435();
 						linhas.setNumEsq30435(linha);
-						fienumeroList.gravarEsq30435(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq30435(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq30354")
-	public void cercaFieEsq30354() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq30354() {
+
+		List<FieEsq30354> esqList = new ArrayList<FieEsq30354>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1522,17 +1717,20 @@ public class FieEsq54330Controller {
 
 						FieEsq30354 linhas = new FieEsq30354();
 						linhas.setNumEsq30354(linha);
-						fienumeroList.gravarEsq30354(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq30354(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq30345")
-	public void cercaFieEsq30345() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq30345() {
 
+		List<FieEsq30345> esqList = new ArrayList<FieEsq30345>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1553,16 +1751,20 @@ public class FieEsq54330Controller {
 
 						FieEsq30345 linhas = new FieEsq30345();
 						linhas.setNumEsq30345(linha);
-						fienumeroList.gravarEsq30345(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq30345(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq05433")
-	public void cercaFieEsq05433() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq05433() {
+
+		List<FieEsq05433> esqList = new ArrayList<FieEsq05433>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1583,16 +1785,20 @@ public class FieEsq54330Controller {
 
 						FieEsq05433 linhas = new FieEsq05433();
 						linhas.setNumEsq05433(linha);
-						fienumeroList.gravarEsq05433(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq05433(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq05343")
-	public void cercaFieEsq05343() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq05343() {
+
+		List<FieEsq05343> esqList = new ArrayList<FieEsq05343>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1613,16 +1819,20 @@ public class FieEsq54330Controller {
 
 						FieEsq05343 linhas = new FieEsq05343();
 						linhas.setNumEsq05343(linha);
-						fienumeroList.gravarEsq05343(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq05343(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq05334")
-	public void cercaFieEsq05334() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq05334() {
+
+		List<FieEsq05334> esqList = new ArrayList<FieEsq05334>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1643,17 +1853,20 @@ public class FieEsq54330Controller {
 
 						FieEsq05334 linhas = new FieEsq05334();
 						linhas.setNumEsq05334(linha);
-						fienumeroList.gravarEsq05334(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq05334(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq04533")
-	public void cercaFieEsq04533() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq04533() {
 
+		List<FieEsq04533> esqList = new ArrayList<FieEsq04533>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1674,16 +1887,20 @@ public class FieEsq54330Controller {
 
 						FieEsq04533 linhas = new FieEsq04533();
 						linhas.setNumEsq04533(linha);
-						fienumeroList.gravarEsq04533(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq04533(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq04353")
-	public void cercaFieEsq04353() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq04353() {
+
+		List<FieEsq04353> esqList = new ArrayList<FieEsq04353>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1704,16 +1921,20 @@ public class FieEsq54330Controller {
 						
 						FieEsq04353 linhas = new FieEsq04353();
 						linhas.setNumEsq04353(linha);
-						fienumeroList.gravarEsq04353(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq04353(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq04335")
-	public void cercaFieEsq04335() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq04335() {
+
+		List<FieEsq04335> esqList = new ArrayList<FieEsq04335>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1734,16 +1955,20 @@ public class FieEsq54330Controller {
 
 						FieEsq04335 linhas = new FieEsq04335();
 						linhas.setNumEsq04335(linha);
-						fienumeroList.gravarEsq04335(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq04335(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq03543")
-	public void cercaFieEsq03543() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq03543() {
+
+		List<FieEsq03543> esqList = new ArrayList<FieEsq03543>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1764,16 +1989,20 @@ public class FieEsq54330Controller {
 
 						FieEsq03543 linhas = new FieEsq03543();
 						linhas.setNumEsq03543(linha);
-						fienumeroList.gravarEsq03543(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq03543(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq03534")
-	public void cercaFieEsq03534() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq03534() {
+
+		List<FieEsq03534> esqList = new ArrayList<FieEsq03534>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1794,16 +2023,20 @@ public class FieEsq54330Controller {
 
 						FieEsq03534 linhas = new FieEsq03534();
 						linhas.setNumEsq03534(linha);
-						fienumeroList.gravarEsq03534(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+			fienumeroList.gravarEsq03534(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq03453")
-	public void cercaFieEsq03453() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq03453() {
+
+		List<FieEsq03453> esqList = new ArrayList<FieEsq03453>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1824,16 +2057,20 @@ public class FieEsq54330Controller {
 
 						FieEsq03453 linhas = new FieEsq03453();
 						linhas.setNumEsq03453(linha);
-						fienumeroList.gravarEsq03453(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq03453(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq03435")
-	public void cercaFieEsq03435() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq03435() {
+
+		List<FieEsq03435> esqList = new ArrayList<FieEsq03435>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1854,17 +2091,20 @@ public class FieEsq54330Controller {
 
 						FieEsq03435 linhas = new FieEsq03435();
 						linhas.setNumEsq03435(linha);
-						fienumeroList.gravarEsq03435(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq03435(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq03354")
-	public void cercaFieEsq03354() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq03354() {
 
+		List<FieEsq03354> esqList = new ArrayList<FieEsq03354>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1885,16 +2125,20 @@ public class FieEsq54330Controller {
 
 						FieEsq03354 linhas = new FieEsq03354();
 						linhas.setNumEsq03354(linha);
-						fienumeroList.gravarEsq03354(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq03354(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	@RequestMapping("/fieesqlf/cercaFieEsq03345")
-	public void cercaFieEsq03345() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq03345() {
+
+		List<FieEsq03345> esqList = new ArrayList<FieEsq03345>();
 
 		executaListas(umEsq5, doisEsq5, tresEsq5, quatroEsq5,cincoEsq5,
 		   	      umEsq4, umEsq3, doisEsq4, doisEsq3, tresEsq4, tresEsq3, 
@@ -1915,12 +2159,13 @@ public class FieEsq54330Controller {
 
 						FieEsq03345 linhas = new FieEsq03345();
 						linhas.setNumEsq03345(linha);
-						fienumeroList.gravarEsq03345(linhas);
-
+						esqList.add(linhas);
 					}
 				}
 			}
 		}
+		fienumeroList.gravarEsq03345(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
 	
 	public void executaListas(String umEsq5,String doisEsq5,String tresEsq5,String quatroEsq5,String cincoEsq5,

@@ -3,6 +3,7 @@ package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model54330.FieEsq03345;
@@ -130,7 +131,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-@Transactional
+@Service
 public class FieEsqDao54330 {
 	@PersistenceContext
 	private EntityManager manager;
@@ -294,8 +295,8 @@ public class FieEsqDao54330 {
 	public void gravarEsq34530(List<FieEsq34530> esquemas){
 		irepository34530.saveAll(esquemas);
 	}
-	public void gravarEsq34503(List<FieEsq34530> esquemas){
-		irepository34530.saveAll(esquemas);
+	public void gravarEsq34503(List<FieEsq34503> esquemas){
+		irepository34503.saveAll(esquemas);
 	}
 	public void gravarEsq34350(List<FieEsq34350> esquemas){
 		irepository34350.saveAll(esquemas);

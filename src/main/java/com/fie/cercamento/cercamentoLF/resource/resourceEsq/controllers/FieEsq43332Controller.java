@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model43332.FieEsq23334;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model43332.FieEsq23343;
@@ -32,9 +35,14 @@ import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.Esq
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoquatro.EsqQuatroModel;
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadotres.EsqTresModel;
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadoum.EsqUmModel;
+import com.fie.cercamento.cercamentoLF.util.ResponseSuccessFie;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RestController
 public class FieEsq43332Controller {
+
+	private static final String FINALIZADO_O_CERCAMENTO_DO_ESQUEMA = "Finalizado o cercamento do esquema";
+
 	@Autowired
 	EsqLotofacilDao numeroList;
 	@Autowired
@@ -46,10 +54,11 @@ public class FieEsq43332Controller {
 		return "esquemas/esq43332/esq43332";
 	}
 
-//********************************************************************************************************
-	
+	// ********************************************************************************************************
+
 	@RequestMapping("/fieesqlf/cercaFieEsq43332")
-	public void cercaFieEsq43332() {
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43332() {
 
 		List<FieEsq43332> esqList = new ArrayList<FieEsq43332>();
 
@@ -81,762 +90,796 @@ public class FieEsq43332Controller {
 
 							FieEsq43332 linhas = new FieEsq43332();
 							linhas.setNumEsq43332(linha);
-                            esqList.add(linhas);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
 		}
-        fienumeroList.gravarEsq43332(esqList);
+		fienumeroList.gravarEsq43332(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
 	}
-	
-	//********************************************************************************************************
-	
-		@RequestMapping("/fieesqlf/cercaFieEsq43323")
-		public void cercaFieEsq43323() {
 
-			List<FieEsq43323> esqList = new ArrayList<FieEsq43323>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq4 = numeroList.listarEsqUm4();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq43323")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43323() {
 
-			for (int a = 0; a < 5; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq43323> esqList = new ArrayList<FieEsq43323>();
 
-								String linhaUm = String.valueOf(numEsq4.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq2.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq4 = numeroList.listarEsqUm4();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 5; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq43323 linhas = new FieEsq43323();
-								linhas.setNumEsq43323(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq4.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq2.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq43323 linhas = new FieEsq43323();
+							linhas.setNumEsq43323(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq43323(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq43233")
-		public void cercaFieEsq43233() {
+		fienumeroList.gravarEsq43323(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq43233> esqList = new ArrayList<FieEsq43233>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq4 = numeroList.listarEsqUm4();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq2 = numeroList.listarEsqTres2();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq43233")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq43233() {
 
-			for (int a = 0; a < 5; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq43233> esqList = new ArrayList<FieEsq43233>();
 
-								String linhaUm = String.valueOf(numEsq4.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq2.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq4 = numeroList.listarEsqUm4();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq2 = numeroList.listarEsqTres2();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 5; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq43233 linhas = new FieEsq43233();
-								linhas.setNumEsq43233(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq4.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq2.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq43233 linhas = new FieEsq43233();
+							linhas.setNumEsq43233(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq43233(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq42333")
-		public void cercaFieEsq42333() {
+		fienumeroList.gravarEsq43233(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-            List<FieEsq42333> esqList = new ArrayList<FieEsq42333>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq4 = numeroList.listarEsqUm4();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq42333")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq42333() {
 
-			for (int a = 0; a < 5; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq42333> esqList = new ArrayList<FieEsq42333>();
 
-								String linhaUm = String.valueOf(numEsq4.get(a));
-								String linhaDois = String.valueOf(doisEsq2.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq4 = numeroList.listarEsqUm4();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 5; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq42333 linhas = new FieEsq42333();
-								linhas.setNumEsq42333(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq4.get(a));
+							String linhaDois = String.valueOf(doisEsq2.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq42333 linhas = new FieEsq42333();
+							linhas.setNumEsq42333(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq42333(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq33342")
-		public void cercaFieEsq33342() {
+		fienumeroList.gravarEsq42333(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq33342> esqList = new ArrayList<FieEsq33342>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq2 = numeroList.listarEsqCinco2();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq33342")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33342() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 5; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq33342> esqList = new ArrayList<FieEsq33342>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq4.get(o));
-								String linhaCinco = String.valueOf(cincoEsq2.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq2 = numeroList.listarEsqCinco2();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 5; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq33342 linhas = new FieEsq33342();
-								linhas.setNumEsq33342(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq4.get(o));
+							String linhaCinco = String.valueOf(cincoEsq2.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq33342 linhas = new FieEsq33342();
+							linhas.setNumEsq33342(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq33342(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq33324")
-		public void cercaFieEsq33324() {
+		fienumeroList.gravarEsq33342(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq33324> esqList = new ArrayList<FieEsq33324>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq4 = numeroList.listarEsqCinco4();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq33324")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33324() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 5; u++) {
+		List<FieEsq33324> esqList = new ArrayList<FieEsq33324>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq2.get(o));
-								String linhaCinco = String.valueOf(cincoEsq4.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq4 = numeroList.listarEsqCinco4();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 5; u++) {
 
-								FieEsq33324 linhas = new FieEsq33324();
-								linhas.setNumEsq33324(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq2.get(o));
+							String linhaCinco = String.valueOf(cincoEsq4.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq33324 linhas = new FieEsq33324();
+							linhas.setNumEsq33324(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq33324(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq33423")
-		public void cercaFieEsq33423() {
+		fienumeroList.gravarEsq33324(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq33423> esqList = new ArrayList<FieEsq33423>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq4 = numeroList.listarEsqTres4();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq33423")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33423() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 5; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq33423> esqList = new ArrayList<FieEsq33423>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq4.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq2.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq4 = numeroList.listarEsqTres4();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 5; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq33423 linhas = new FieEsq33423();
-								linhas.setNumEsq33423(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq4.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq2.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq33423 linhas = new FieEsq33423();
+							linhas.setNumEsq33423(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq33423(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq33243")
-		public void cercaFieEsq33243() {
+		fienumeroList.gravarEsq33423(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq33243> esqList = new ArrayList<FieEsq33243>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq2 = numeroList.listarEsqTres2();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq33243")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq33243() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 5; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq33243> esqList = new ArrayList<FieEsq33243>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq2.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq4.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq2 = numeroList.listarEsqTres2();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 5; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq33243 linhas = new FieEsq33243();
-								linhas.setNumEsq33243(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq2.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq4.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq33243 linhas = new FieEsq33243();
+							linhas.setNumEsq33243(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq33243(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq34233")
-		public void cercaFieEsq34233() {
+		fienumeroList.gravarEsq33243(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq34233> esqList = new ArrayList<FieEsq34233>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
-			// ************************************************************
-			List<EsqTresModel> tresEsq2 = numeroList.listarEsqTres2();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq34233")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34233() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 5; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq34233> esqList = new ArrayList<FieEsq34233>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq4.get(e));
-								String linhaTres = String.valueOf(tresEsq2.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
+		// ************************************************************
+		List<EsqTresModel> tresEsq2 = numeroList.listarEsqTres2();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 5; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq34233 linhas = new FieEsq34233();
-								linhas.setNumEsq34233(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq4.get(e));
+							String linhaTres = String.valueOf(tresEsq2.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq34233 linhas = new FieEsq34233();
+							linhas.setNumEsq34233(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq34233(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq32433")
-		public void cercaFieEsq32433() {
+		fienumeroList.gravarEsq34233(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq32433> esqList = new ArrayList<FieEsq32433>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
-			// ************************************************************
-			List<EsqTresModel> tresEsq4 = numeroList.listarEsqTres4();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq32433")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq32433() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 5; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq32433> esqList = new ArrayList<FieEsq32433>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq2.get(e));
-								String linhaTres = String.valueOf(tresEsq4.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
+		// ************************************************************
+		List<EsqTresModel> tresEsq4 = numeroList.listarEsqTres4();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 5; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq32433 linhas = new FieEsq32433();
-								linhas.setNumEsq32433(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq2.get(e));
+							String linhaTres = String.valueOf(tresEsq4.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq32433 linhas = new FieEsq32433();
+							linhas.setNumEsq32433(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq32433(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq34332")
-		public void cercaFieEsq34332() {
+		fienumeroList.gravarEsq32433(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq34332> esqList = new ArrayList<FieEsq34332>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq2 = numeroList.listarEsqCinco2();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq34332")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34332() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 5; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq34332> esqList = new ArrayList<FieEsq34332>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq4.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq2.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq2 = numeroList.listarEsqCinco2();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 5; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq34332 linhas = new FieEsq34332();
-								linhas.setNumEsq34332(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq4.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq2.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq34332 linhas = new FieEsq34332();
+							linhas.setNumEsq34332(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq34332(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq34323")
-		public void cercaFieEsq34323() {
+		fienumeroList.gravarEsq34332(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq34323> esqList = new ArrayList<FieEsq34323>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq34323")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq34323() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 5; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq34323> esqList = new ArrayList<FieEsq34323>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq4.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq2.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq2 = numeroList.listarEsqQuatro2();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 5; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq34323 linhas = new FieEsq34323();
-								linhas.setNumEsq34323(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq4.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq2.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq34323 linhas = new FieEsq34323();
+							linhas.setNumEsq34323(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq34323(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq32334")
-		public void cercaFieEsq32334() {
+		fienumeroList.gravarEsq34323(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq32334> esqList = new ArrayList<FieEsq32334>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq4 = numeroList.listarEsqCinco4();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq32334")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq32334() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 5; u++) {
+		List<FieEsq32334> esqList = new ArrayList<FieEsq32334>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq2.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq4.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq4 = numeroList.listarEsqCinco4();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 5; u++) {
 
-								FieEsq32334 linhas = new FieEsq32334();
-								linhas.setNumEsq32334(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq2.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq4.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq32334 linhas = new FieEsq32334();
+							linhas.setNumEsq32334(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq32334(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq32343")
-		public void cercaFieEsq32343() {
+		fienumeroList.gravarEsq32334(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq32343> esqList = new ArrayList<FieEsq32343>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq32343")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq32343() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 5; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq32343> esqList = new ArrayList<FieEsq32343>();
 
-								String linhaUm = String.valueOf(numEsq3.get(a));
-								String linhaDois = String.valueOf(doisEsq2.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq4.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq3 = numeroList.listarEsqUm3();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq2 = numeroList.listarEsqDois2();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 5; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq32343 linhas = new FieEsq32343();
-								linhas.setNumEsq32343(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq3.get(a));
+							String linhaDois = String.valueOf(doisEsq2.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq4.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq32343 linhas = new FieEsq32343();
+							linhas.setNumEsq32343(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq32343(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq24333")
-		public void cercaFieEsq24333() {
+		fienumeroList.gravarEsq32343(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq24333> esqList = new ArrayList<FieEsq24333>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq24333")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq24333() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 5; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq24333> esqList = new ArrayList<FieEsq24333>();
 
-								String linhaUm = String.valueOf(numEsq2.get(a));
-								String linhaDois = String.valueOf(doisEsq4.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq4 = numeroList.listarEsqDois4();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 5; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq24333 linhas = new FieEsq24333();
-								linhas.setNumEsq24333(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq2.get(a));
+							String linhaDois = String.valueOf(doisEsq4.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq24333 linhas = new FieEsq24333();
+							linhas.setNumEsq24333(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq24333(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq23433")
-		public void cercaFieEsq23433() {
+		fienumeroList.gravarEsq24333(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq23433> esqList = new ArrayList<FieEsq23433>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq4 = numeroList.listarEsqTres4();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq23433")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq23433() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 5; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq23433> esqList = new ArrayList<FieEsq23433>();
 
-								String linhaUm = String.valueOf(numEsq2.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq4.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq4 = numeroList.listarEsqTres4();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 5; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq23433 linhas = new FieEsq23433();
-								linhas.setNumEsq23433(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq2.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq4.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq23433 linhas = new FieEsq23433();
+							linhas.setNumEsq23433(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq23433(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq23343")
-		public void cercaFieEsq23343() {
+		fienumeroList.gravarEsq23433(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq23343> esqList = new ArrayList<FieEsq23343>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq23343")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq23343() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 5; o++) {
-							for (int u = 0; u < 10; u++) {
+		List<FieEsq23343> esqList = new ArrayList<FieEsq23343>();
 
-								String linhaUm = String.valueOf(numEsq2.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq4.get(o));
-								String linhaCinco = String.valueOf(cincoEsq3.get(u));
+		List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq4 = numeroList.listarEsqQuatro4();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq3 = numeroList.listarEsqCinco3();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 5; o++) {
+						for (int u = 0; u < 10; u++) {
 
-								FieEsq23343 linhas = new FieEsq23343();
-								linhas.setNumEsq23343(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq2.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq4.get(o));
+							String linhaCinco = String.valueOf(cincoEsq3.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq23343 linhas = new FieEsq23343();
+							linhas.setNumEsq23343(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq23343(esqList);
 		}
-		
-		//********************************************************************************************************
-		
-		@RequestMapping("/fieesqlf/cercaFieEsq23334")
-		public void cercaFieEsq23334() {
+		fienumeroList.gravarEsq23343(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
 
-			List<FieEsq23334> esqList = new ArrayList<FieEsq23334>();
+	// ********************************************************************************************************
 
-			List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
-			// ***********************************************************
-			List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
-			// ************************************************************
-			List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
-			// ***************************************************************
-			List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
-			// ****************************************************************
-			List<EsqCincoModel> cincoEsq4 = numeroList.listarEsqCinco4();
-			// ******************************************************************
+	@RequestMapping("/fieesqlf/cercaFieEsq23334")
+	@ResponseBody
+	public ResponseSuccessFie cercaFieEsq23334() {
 
-			for (int a = 0; a < 10; a++) {
-				for (int e = 0; e < 10; e++) {
-					for (int i = 0; i < 10; i++) {
-						for (int o = 0; o < 10; o++) {
-							for (int u = 0; u < 5; u++) {
+		List<FieEsq23334> esqList = new ArrayList<FieEsq23334>();
 
-								String linhaUm = String.valueOf(numEsq2.get(a));
-								String linhaDois = String.valueOf(doisEsq3.get(e));
-								String linhaTres = String.valueOf(tresEsq3.get(i));
-								String linhaQuatro = String.valueOf(quatroEsq3.get(o));
-								String linhaCinco = String.valueOf(cincoEsq4.get(u));
+		List<EsqUmModel> numEsq2 = numeroList.listarEsqUm2();
+		// ***********************************************************
+		List<EsqDoisModel> doisEsq3 = numeroList.listarEsqDois3();
+		// ************************************************************
+		List<EsqTresModel> tresEsq3 = numeroList.listarEsqTres3();
+		// ***************************************************************
+		List<EsqQuatroModel> quatroEsq3 = numeroList.listarEsqQuatro3();
+		// ****************************************************************
+		List<EsqCincoModel> cincoEsq4 = numeroList.listarEsqCinco4();
+		// ******************************************************************
 
-								String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
-																											// principal
+		for (int a = 0; a < 10; a++) {
+			for (int e = 0; e < 10; e++) {
+				for (int i = 0; i < 10; i++) {
+					for (int o = 0; o < 10; o++) {
+						for (int u = 0; u < 5; u++) {
 
-								FieEsq23334 linhas = new FieEsq23334();
-								linhas.setNumEsq23334(linha);
-                                esqList.add(linhas);
-							}
+							String linhaUm = String.valueOf(numEsq2.get(a));
+							String linhaDois = String.valueOf(doisEsq3.get(e));
+							String linhaTres = String.valueOf(tresEsq3.get(i));
+							String linhaQuatro = String.valueOf(quatroEsq3.get(o));
+							String linhaCinco = String.valueOf(cincoEsq4.get(u));
+
+							String linha = linhaUm + linhaDois + linhaTres + linhaQuatro + linhaCinco; // string
+																										// principal
+
+							FieEsq23334 linhas = new FieEsq23334();
+							linhas.setNumEsq23334(linha);
+							esqList.add(linhas);
 						}
 					}
 				}
 			}
-			fienumeroList.gravarEsq23334(esqList);
 		}
-		
-	
+		fienumeroList.gravarEsq23334(esqList);
+		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+	}
+
 } // fim da classe classe completa!

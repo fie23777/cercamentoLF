@@ -3,7 +3,7 @@ package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55410.FieEsq01455;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55410.FieEsq01545;
@@ -126,13 +126,15 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55410.Irepository55401;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.services.repository.repository55410.Irepository55410;
 
-import jakarta.saveAllence.EntityManager;
-import jakarta.saveAllence.saveAllenceContext;
-import jakarta.saveAllence.TypedQuery;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 
-@Transactional
+
+@Service
 public class FieEsqDao55410 {
-	@saveAllenceContext
+	
+    @PersistenceContext
 	private EntityManager manager;
 	
 	private int limite = 20;

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\projetos\Cercamento-Spring-Boot-Loto-Facil"/>
 			<item value="D:\projetos\Retomando-Projeto-MS-2023"/>
 		</list>
 		<list key="projectNameTemplate">

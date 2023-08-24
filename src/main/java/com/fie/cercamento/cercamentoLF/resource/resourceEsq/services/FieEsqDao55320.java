@@ -4,6 +4,7 @@ package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55320.FieEsq02355;
@@ -131,7 +132,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-@Transactional
+@Service
 public class FieEsqDao55320 {
 	@PersistenceContext
 	private EntityManager manager;
