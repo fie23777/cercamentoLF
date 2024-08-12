@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -104,8 +103,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq44322(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq44322(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24342")
@@ -147,8 +145,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq24342(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq24342(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq42324")
@@ -190,8 +187,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq42324(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq42324(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq42342")
@@ -233,8 +229,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq42342(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq42342(esqList), "24342");
 	}
 
 	// ********************************************************************************************************
@@ -277,8 +272,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq22344(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq22344(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq22434")
@@ -320,8 +314,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq22434(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq22434(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq22443")
@@ -363,8 +356,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq22443(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq22443(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq23244")
@@ -406,8 +398,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq23244(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq23244(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq23424")
@@ -449,8 +440,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq23424(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq23424(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq23442")
@@ -492,8 +482,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq23442(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq23442(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24234")
@@ -535,8 +524,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq24234(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq24234(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24243")
@@ -578,8 +566,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq24243(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq24243(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24423")
@@ -621,8 +608,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq24423(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq24423(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24432")
@@ -664,8 +650,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq24432(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq24432(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq32244")
@@ -707,8 +692,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq32244(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq32244(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq32424") // ultimo passado
@@ -750,8 +734,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq32424(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq32424(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq32442")
@@ -793,8 +776,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq32442(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq32442(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq34224")
@@ -836,8 +818,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq34224(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq34224(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq34242")
@@ -879,8 +860,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq34242(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq34242(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq34422") // parou aqui
@@ -922,8 +902,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq34422(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq34422(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq42234")
@@ -966,8 +945,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq42234(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq42234(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq42243")
@@ -1009,8 +987,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq42243(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq42243(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq42423")
@@ -1052,8 +1029,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq42423(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq42423(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq42432")
@@ -1095,8 +1071,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq42432(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq42432(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq43224")
@@ -1138,8 +1113,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq43224(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq43224(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq43242")
@@ -1181,8 +1155,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq43242(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq43242(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq43422")
@@ -1224,8 +1197,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq43422(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq43422(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq44223")
@@ -1267,8 +1239,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq44223(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq44223(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq44232")
@@ -1310,8 +1281,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq44232(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq44232(esqList), "24342");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24324")
@@ -1354,8 +1324,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		fienumeroList.gravarEsq24324(esqList);
-		return new ResponseSuccessFie(FINALIZADO_O_CERCAMENTO_DO_ESQUEMA, "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq24324(esqList), "24342");
 	}
 
 }

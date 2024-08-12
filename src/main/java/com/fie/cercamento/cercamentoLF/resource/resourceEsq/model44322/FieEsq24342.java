@@ -1,7 +1,5 @@
 package com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44322;
 
-import com.fie.cercamento.cercamentoLF.interfaceEsq.IFieEsq;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

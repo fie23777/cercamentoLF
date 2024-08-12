@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.EsqLotofacilDao;
-import com.fie.cercamento.cercamentoLF.resource.resourcesoudados.soldadodois.EsqDoisModel;
 
 @Component
 public class CercaEsqQuatro {

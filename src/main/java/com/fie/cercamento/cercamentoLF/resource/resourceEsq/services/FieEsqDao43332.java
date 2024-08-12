@@ -1,6 +1,7 @@
 package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,7 +76,13 @@ public class FieEsqDao43332 {
 	
 	//para o esquema fie gravar em banco
 		public void gravarEsq43332(List<FieEsq43332> esquemas){  
-			irepository43332.saveAll(esquemas);
+	        List<FieEsq43332> esquemasFiltrados = esquemas.stream()
+	                .filter(esquema -> !irepository43332.existsById(esquema.getId()))
+	                .collect(Collectors.toList());
+
+	        if (!esquemasFiltrados.isEmpty()) {
+	            irepository43332.saveAll(esquemasFiltrados);
+	        }
 		}
 		public void gravarEsq43323(List<FieEsq43323> esquemas){
 			irepository43323.saveAll(esquemas);
