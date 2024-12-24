@@ -51,6 +51,10 @@ import com.fie.cercamento.cercamentoLF.util.ResponseSuccessFie;
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 public class FieEsq53322Controller {
+	
+	private static final String GRAVADO_COM_SUCESSO = "Gravado com sucesso!";
+
+	private static final String JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS = "Já existe esse esquema no banco de dados";
 
 	private static final String FINALIZADO_O_CERCAMENTO_DO_ESQUEMA = "Finalizado o cercamento do esquema";
 

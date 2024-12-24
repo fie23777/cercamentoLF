@@ -41,8 +41,6 @@ import com.fie.cercamento.cercamentoLF.util.ResponseSuccessFie;
 @RestController
 public class FieEsq44421Controller {
 
-	private static final String FINALIZADO_O_CERCAMENTO_DO_ESQUEMA = "Finalizado o cercamento do esquema";
-
 	@Autowired
 	EsqLotofacilDao numeroList;
 	@Autowired

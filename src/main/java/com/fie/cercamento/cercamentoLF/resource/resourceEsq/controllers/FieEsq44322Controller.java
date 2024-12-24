@@ -51,7 +51,7 @@ import com.fie.cercamento.cercamentoLF.util.ResponseSuccessFie;
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 public class FieEsq44322Controller {
-	private static final String FINALIZADO_O_CERCAMENTO_DO_ESQUEMA = "Finalizado o cercamento do esquema";
+
 	@Autowired
 	EsqLotofacilDao numeroList;
 	@Autowired
@@ -103,7 +103,7 @@ public class FieEsq44322Controller {
 				}
 			}
 		}
-		return new ResponseSuccessFie(fienumeroList.gravarEsq44322(esqList), "24342");
+		return new ResponseSuccessFie(fienumeroList.gravarEsq44322(esqList), "44322");
 	}
 
 	@RequestMapping("/fieesqlf/cercaFieEsq24342")

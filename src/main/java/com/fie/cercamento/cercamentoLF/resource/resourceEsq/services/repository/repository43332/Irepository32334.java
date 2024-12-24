@@ -7,5 +7,7 @@ import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model43332.FieEsq323
 
 @Repository
 public interface Irepository32334 extends JpaRepository<FieEsq32334, Integer> {
+
+	boolean existsByNumEsq32334(String numEsq32334);
     
 }

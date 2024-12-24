@@ -1,10 +1,12 @@
 package com.fie.cercamento.cercamentoLF.resource.resourceEsq.services;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model44322.FieEsq44232;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq00555;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq05055;
 import com.fie.cercamento.cercamentoLF.resource.resourceEsq.model55500.FieEsq05505;
@@ -33,6 +35,11 @@ import jakarta.persistence.TypedQuery;
 
 @Service
 public class FieEsqDao55500 {
+	
+	private static final String GRAVADO_COM_SUCESSO = "Gravado com sucesso!";
+
+	private static final String JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS = "Já existe esse esquema no banco de dados";
+	
 	@PersistenceContext
 	private EntityManager manager;
 	
@@ -53,34 +60,154 @@ public class FieEsqDao55500 {
 	
 	//para o esquema fie gravar em banco
 		public void gravarEsq55500(List<FieEsq55500> esquemas){  
-			irepository55500.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq55050(List<FieEsq55050> esquemas){
-			irepository55050.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq55005(List<FieEsq55005> esquemas){
-			irepository55005.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq50505(List<FieEsq50505> esquemas){
-			irepository50505.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq50550(List<FieEsq50550> esquemas){//
-			irepository50550.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq50055(List<FieEsq50055> esquemas){//
-			irepository50055.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq05055(List<FieEsq05055> esquemas){//
-			irepository05055.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq05505(List<FieEsq05505> esquemas){//
-			irepository05505.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq05550(List<FieEsq05550> esquemas){//
-			irepository05550.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		public void gravarEsq00555(List<FieEsq00555> esquemas){//
-			irepository00555.saveAll(esquemas);
+	        List<FieEsq44232> esquemasFiltrados;
+	        synchronized(this) {
+	            esquemasFiltrados = esquemas.stream()
+	                    .filter(esquema -> !irepository44232.existsByNumEsq44232(esquema.getNumEsq44232()))
+	                    .collect(Collectors.toList());
+
+	            if (!esquemasFiltrados.isEmpty()) {
+	                irepository44232.saveAll(esquemasFiltrados);
+	                return GRAVADO_COM_SUCESSO;
+	            } else {        	
+	                return JÁ_EXISTE_ESSE_ESQUEMA_NO_BANCO_DE_DADOS;
+	            }
+	        }
 		}
 		
 		
